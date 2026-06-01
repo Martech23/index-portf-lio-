@@ -18,8 +18,9 @@
   <nav class="fixed top-0 w-full z-50 bg-zinc-950/90 border-b border-zinc-800 backdrop-blur-lg">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <div class="text-3xl font-bold tracking-tighter text-white">Martins Web</div>
-      <div class="hidden md:flex space-x-8 text-sm">
-        <!-- Link atualizado para apontar para a subpágina -->
+      
+      <!-- Menu Desktop (Escondido no Mobile) -->
+      <div class="hidden lg:flex space-x-8 text-sm">
         <a href="sobre.html" class="hover:text-violet-400 transition">Sobre</a>
         <a href="#por-que-investir" class="hover:text-violet-400 transition">Por que Investir?</a>
         <a href="#competencias" class="hover:text-violet-400 transition">Competências</a>
@@ -27,8 +28,30 @@
         <a href="#ferramentas" class="hover:text-violet-400 transition">Ferramentas</a>
         <a href="#contato" class="hover:text-violet-400 transition">Contato</a>
       </div>
+      
+      <div class="hidden lg:block">
+        <a href="https://wa.me/5511975321113" target="_blank" rel="noopener noreferrer"
+           class="bg-violet-600 hover:bg-violet-500 px-6 py-3 rounded-full text-sm font-semibold transition">
+          Falar no WhatsApp
+        </a>
+      </div>
+
+      <!-- Botão do Menu Mobile (Hambúrguer) -->
+      <button id="menu-btn" class="lg:hidden text-white text-2xl focus:outline-none" aria-label="Abrir Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Menu Mobile Dropdown (Inicia escondido) -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-zinc-950 border-b border-zinc-800 px-6 py-6 space-y-4 text-base">
+      <a href="sobre.html" class="block hover:text-violet-400 transition py-2 border-b border-zinc-900">Sobre</a>
+      <a href="#por-que-investir" class="block mobile-link hover:text-violet-400 transition py-2 border-b border-zinc-900">Por que Investir?</a>
+      <a href="#competencias" class="block mobile-link hover:text-violet-400 transition py-2 border-b border-zinc-900">Competências</a>
+      <a href="#cases" class="block mobile-link hover:text-violet-400 transition py-2 border-b border-zinc-900">Cases de Sucesso</a>
+      <a href="#ferramentas" class="block mobile-link hover:text-violet-400 transition py-2 border-b border-zinc-900">Ferramentas</a>
+      <a href="#contato" class="block mobile-link hover:text-violet-400 transition py-2">Contato</a>
       <a href="https://wa.me/5511975321113" target="_blank" rel="noopener noreferrer"
-         class="bg-violet-600 hover:bg-violet-500 px-6 py-3 rounded-full text-sm font-semibold transition">
+         class="block bg-violet-600 hover:bg-violet-500 text-center py-3 rounded-xl text-sm font-semibold transition mt-4">
         Falar no WhatsApp
       </a>
     </div>
@@ -56,7 +79,6 @@
           <a href="#contato" class="bg-white text-black px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition">
             Vamos trabalhar juntos
           </a>
-          <!-- Novo botão adicionado para conectar com a subpágina -->
           <a href="sobre.html" class="bg-zinc-900 border border-zinc-800 hover:border-violet-500 px-8 py-4 rounded-2xl font-semibold transition">
             Conheça minha história
           </a>
@@ -197,41 +219,111 @@
 
   <!-- FERRAMENTAS E PLATAFORMAS -->
   <section id="ferramentas" class="py-24 bg-zinc-900">
-    <div class="max-w-5xl mx-auto px-6">
+    <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-5xl font-bold text-center mb-16">Ferramentas & Plataformas</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 flex items-center gap-4 hover:border-violet-500 transition">
-          <i class="fa-brands fa-google text-3xl text-blue-400"></i>
-          <span class="font-medium">Google Ads</span>
+      
+      <!-- Grid com resumos integrados abaixo de cada caixa -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- 1. Google Ads -->
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 hover:border-violet-500 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-4">
+              <i class="fa-brands fa-google text-3xl text-blue-400"></i>
+              <span class="font-semibold text-lg text-white">Google Ads</span>
+            </div>
+            <p class="text-zinc-400 text-sm leading-relaxed">Criação de campanhas cirúrgicas na rede de pesquisa e Youtube para atrair clientes prontos para comprar seu produto ou serviço.</p>
+          </div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 flex items-center gap-4 hover:border-violet-500 transition">
-          <i class="fa-brands fa-meta text-3xl text-blue-600"></i>
-          <span class="font-medium">Meta Ads</span>
+
+        <!-- 2. Meta Ads -->
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 hover:border-violet-500 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-4">
+              <i class="fa-brands fa-meta text-3xl text-blue-600"></i>
+              <span class="font-semibold text-lg text-white">Meta Ads</span>
+            </div>
+            <p class="text-zinc-400 text-sm leading-relaxed">Anúncios altamente segmentados no Instagram e Facebook com foco em engajamento, geração de leads e conversões diretas.</p>
+          </div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 flex items-center gap-4 hover:border-violet-500 transition">
-          <i class="fa-solid fa-chart-bar text-3xl text-emerald-400"></i>
-          <span class="font-medium">Google Analytics</span>
+
+        <!-- 3. Google Meu Negócio -->
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 hover:border-violet-500 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-4">
+              <i class="fa-solid fa-store text-3xl text-red-400"></i>
+              <span class="font-semibold text-lg text-white">Google Meu Negócio</span>
+            </div>
+            <p class="text-zinc-400 text-sm leading-relaxed">Posicionamento local estratégico para fazer sua empresa ser encontrada facilmente por clientes da sua região no Google Maps.</p>
+          </div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 flex items-center gap-4 hover:border-violet-500 transition">
-          <i class="fa-solid fa-ad text-3xl text-orange-400"></i>
-          <span class="font-medium">Google AdSense</span>
+
+        <!-- 4. Google Analytics -->
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 hover:border-violet-500 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-4">
+              <i class="fa-solid fa-chart-bar text-3xl text-emerald-400"></i>
+              <span class="font-semibold text-lg text-white">Google Analytics</span>
+            </div>
+            <p class="text-zinc-400 text-sm leading-relaxed">Análise profunda de dados e comportamento do usuário para identificar gargalos e otimizar o retorno sobre investimento (ROI).</p>
+          </div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 flex items-center gap-4 hover:border-violet-500 transition">
-          <i class="fa-solid fa-globe text-3xl text-violet-400"></i>
-          <span class="font-medium">Criação de Sites</span>
+
+        <!-- 5. Google AdSense -->
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 hover:border-violet-500 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-4">
+              <i class="fa-solid fa-ad text-3xl text-orange-400"></i>
+              <span class="font-semibold text-lg text-white">Google AdSense</span>
+            </div>
+            <p class="text-zinc-400 text-sm leading-relaxed">Monetização e gerenciamento estratégico de espaços publicitários em portais de conteúdo para escalar receitas.</p>
+          </div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 flex items-center gap-4 hover:border-violet-500 transition">
-          <i class="fa-brands fa-whatsapp text-3xl text-emerald-500"></i>
-          <span class="font-medium">Automação WhatsApp</span>
+
+        <!-- 6. Criação de Lojas Virtuais e Landing Pages (NOVA) -->
+        <div class="bg-zinc-950 border border-violet-500/40 rounded-2xl p-6 hover:border-violet-500 transition flex flex-col justify-between ring-1 ring-violet-500/20">
+          <div>
+            <div class="flex items-center gap-4 mb-4">
+              <i class="fa-solid fa-cart-shopping text-3xl text-fuchsia-400"></i>
+              <span class="font-semibold text-lg text-white">E-commerce & Landing Pages</span>
+            </div>
+            <p class="text-zinc-400 text-sm leading-relaxed">Desenvolvimento de e-commerces completos e páginas de alta conversão focadas exclusivamente em transformar acessos em vendas imediatas.</p>
+          </div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 flex items-center gap-4 hover:border-violet-500 transition">
-          <i class="fa-solid fa-pen-to-square text-3xl text-fuchsia-400"></i>
-          <span class="font-medium">Criação de Conteúdo</span>
+
+        <!-- 7. Criação de Sites -->
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 hover:border-violet-500 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-4">
+              <i class="fa-solid fa-globe text-3xl text-violet-400"></i>
+              <span class="font-semibold text-lg text-white">Criação de Sites</span>
+            </div>
+            <p class="text-zinc-400 text-sm leading-relaxed">Desenvolvimento de sites institucionais modernos, rápidos, totalmente responsivos e otimizados para motores de busca (SEO).</p>
+          </div>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 flex items-center gap-4 hover:border-violet-500 transition">
-          <i class="fa-solid fa-share-nodes text-3xl text-cyan-400"></i>
-          <span class="font-medium">Gestão de Redes Sociais</span>
+
+        <!-- 8. Automação WhatsApp -->
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 hover:border-violet-500 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-4">
+              <i class="fa-brands fa-whatsapp text-3xl text-emerald-500"></i>
+              <span class="font-semibold text-lg text-white">Automação WhatsApp</span>
+            </div>
+            <p class="text-zinc-400 text-sm leading-relaxed">Configuração de funis inteligentes de atendimento automatizado para qualificar leads e agilizar o suporte comercial 24h por dia.</p>
+          </div>
         </div>
+
+        <!-- 9. Criação de Conteúdo & Copywriting -->
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 hover:border-violet-500 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-4 mb-4">
+              <i class="fa-solid fa-pen-to-square text-3xl text-fuchsia-400"></i>
+              <span class="font-semibold text-lg text-white">Copywriting & Conteúdo</span>
+            </div>
+            <p class="text-zinc-400 text-sm leading-relaxed">Escrita persuasiva e alinhamento de mensagens de marca para anúncios que geram forte identificação e conexão com o público-alvo.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -242,7 +334,7 @@
       <h2 class="text-5xl font-bold mb-8">Vamos elevar seus resultados?</h2>
       <p class="text-xl text-zinc-400 mb-10">Estamos disponíveis para projetos de Tráfego Pago, Criação de Sites e Automação.</p>
       
-      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+      <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
         <a href="mailto:davidmartins1399@gmail.com" 
            class="bg-zinc-800 hover:bg-zinc-700 px-10 py-5 rounded-2xl flex items-center justify-center gap-3 text-lg transition">
           <i class="fa-solid fa-envelope"></i> Enviar E-mail
@@ -253,15 +345,36 @@
         </a>
       </div>
       
-      <p class="mt-12 text-sm text-zinc-500">
-        Recife, Pernambuco • davidmartins1399@gmail.com • (11) 97532-1113
-      </p>
+      <div class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 max-w-sm mx-auto text-sm text-zinc-400 space-y-2">
+        <div class="font-semibold text-white uppercase tracking-wider text-xs mb-3"><i class="fa-regular fa-clock mr-2 text-violet-400"></i>Horário de Funcionamento</div>
+        <div>Segunda a sexta: 08h às 19h</div>
+        <div>Sábado: 08h às 16h</div>
+      </div>
     </div>
   </section>
 
   <footer class="py-12 border-t border-zinc-800 text-center text-zinc-500 text-sm">
     © 2026 Martins Web • Gestor de Tráfego Pago & Marketing Digital
   </footer>
+
+  <!-- Lógica Inteligente para o Menu Mobile -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    // Abre e fecha o menu ao clicar no botão hambúrguer
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Fecha o menu automaticamente quando clica em qualquer link interno das categorias
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
 
 </body>
 </html>
