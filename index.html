@@ -9,18 +9,16 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
-    .hero-bg { background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 100%); }
 
     /* Glassmorphism Avançado */
     .advanced-glass {
       background: rgba(255, 255, 255, 0.06);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2),
-        inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
       position: relative;
       overflow: hidden;
     }
@@ -31,16 +29,8 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 40%;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.03) 50%, transparent 100%);
-      pointer-events: none;
-    }
-
-    .advanced-glass::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(192,38,211,0.08) 0%, transparent 50%, rgba(103,232,249,0.08) 100%);
+      height: 45%;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.12) 0%, transparent 100%);
       pointer-events: none;
     }
 
@@ -105,53 +95,52 @@
     </div>
   </nav>
 
-<!-- HERO COM GLASSMORPHISM EM TODA A ÁREA -->
-<section class="min-h-[95vh] flex items-center pt-16 pb-10 relative overflow-hidden" data-aos="fade-up">
-  
-  <!-- Fundo com efeito Glass -->
-  <div class="absolute inset-0 bg-zinc-950/80 backdrop-blur-3xl z-0"></div>
-  
-  <!-- Partículas sutis -->
-  <canvas id="particles-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
-
-  <!-- Conteúdo -->
-  <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+  <!-- HERO COM GLASSMORPHISM EM TODA A ÁREA DE CIMA -->
+  <section class="min-h-[95vh] flex items-center pt-16 pb-10 relative overflow-hidden" data-aos="fade-up">
     
-    <!-- Glass Card Central (mais clean) -->
-    <div class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 md:p-16 shadow-2xl">
+    <!-- Fundo Glass -->
+    <div class="absolute inset-0 bg-zinc-950/85 backdrop-blur-3xl z-0"></div>
+    
+    <!-- Partículas -->
+    <canvas id="particles-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
       
-      <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full text-sm mb-8">
-        <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-        <span class="text-white/90">Disponível para novos projetos • 2026</span>
+      <!-- Card Central -->
+      <div class="advanced-glass rounded-3xl p-10 md:p-16 shadow-2xl">
+        
+        <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full text-sm mb-8">
+          <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+          <span class="text-white/90">Disponível para novos projetos • 2026</span>
+        </div>
+
+        <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6">
+          Martins Web<br>
+          <span class="animated-gradient">
+            Gestor de Tráfego Pago
+          </span>
+        </h1>
+
+        <p class="text-2xl md:text-3xl text-white/80 max-w-3xl mx-auto mb-10 tracking-tight">
+          Agência de performance digital que combina tecnologia, estratégia e resultados reais.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contato" class="bg-white text-black px-10 py-4 rounded-2xl font-semibold hover:bg-zinc-100 transition text-lg">
+            Vamos trabalhar juntos
+          </a>
+          <a href="sobre.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-xl px-10 py-4 rounded-2xl font-semibold transition text-lg">
+            Conheça nossa metodologia
+          </a>
+        </div>
       </div>
 
-      <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6">
-        Martins Web<br>
-        <span class="animated-gradient">
-          Gestor de Tráfego Pago
-        </span>
-      </h1>
-
-      <p class="text-2xl md:text-3xl text-white/80 max-w-3xl mx-auto mb-10 tracking-tight">
-        Agência de performance digital que combina tecnologia, estratégia e resultados reais.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#contato" class="bg-white text-black px-10 py-4 rounded-2xl font-semibold hover:bg-zinc-100 transition text-lg">
-          Vamos trabalhar juntos
-        </a>
-        <a href="sobre.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-xl px-10 py-4 rounded-2xl font-semibold transition text-lg">
-          Conheça nossa metodologia
-        </a>
+      <div class="flex justify-center gap-8 mt-8 text-sm text-white/60">
+        <div>Recife, PE</div>
+        <div>+10 anos de experiência</div>
       </div>
     </div>
-
-    <div class="flex justify-center gap-8 mt-8 text-sm text-white/60">
-      <div>Recife, PE</div>
-      <div>+10 anos de experiência</div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- SOBRE -->
   <section class="py-20 bg-zinc-900" data-aos="fade-up">
@@ -368,7 +357,7 @@
 
     mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
 
-    // Efeito de Partículas Sutil
+    // Partículas Sutil
     function initParticles() {
       const canvas = document.getElementById('particles-canvas');
       if (!canvas) return;
