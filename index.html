@@ -31,6 +31,14 @@
     .hero-text {
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
     }
+
+    .modern-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .modern-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
   </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
@@ -81,15 +89,10 @@
   <!-- HERO COM 3D FULL BACKGROUND -->
   <section class="min-h-[100dvh] flex items-center relative overflow-hidden mesh-bg grain">
     
-    <!-- Animação 3D Full Screen -->
     <canvas id="three-canvas" class="absolute inset-0 w-full h-full z-0"></canvas>
-
-    <!-- Overlay para legibilidade -->
     <div class="absolute inset-0 bg-black/45 z-10"></div>
 
-    <!-- Texto -->
     <div class="max-w-5xl mx-auto px-6 text-center relative z-20">
-      
       <div class="max-w-4xl mx-auto">
         
         <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full text-sm mb-8 backdrop-blur-xl">
@@ -229,6 +232,15 @@
           <p class="text-zinc-400 text-sm">Produção de textos persuasivos e estratégicos para anúncios, sites e materiais que geram conexão e aumentam as taxas de conversão.</p>
         </div>
 
+        <!-- INTELIGÊNCIA ARTIFICIAL - COPY REFINADO -->
+        <div class="modern-card bg-zinc-950 p-8 rounded-3xl ring-1 ring-violet-500/40">
+          <div class="flex items-center gap-4 mb-4">
+            <i class="fa-solid fa-robot text-3xl text-violet-400"></i>
+            <span class="font-semibold text-lg">Inteligência Artificial</span>
+          </div>
+          <p class="text-zinc-400 text-sm">Inteligência Artificial estratégica para maximizar performance: otimização inteligente de campanhas, criação de conteúdo em escala e análise preditiva de resultados.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -309,7 +321,6 @@
   <script>
     AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
 
-    // Menu Mobile
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -333,7 +344,6 @@
 
     mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
 
-    // Three.js - Rede 3D Full Screen
     function initThreeJS() {
       const canvas = document.getElementById('three-canvas');
       if (!canvas) return;
@@ -345,7 +355,6 @@
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-      // Nós
       const nodes = [];
       const nodeCount = 18;
       const nodeGeometry = new THREE.SphereGeometry(0.13, 16, 16);
@@ -359,7 +368,6 @@
 
       for (let i = 0; i < nodeCount; i++) {
         const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
-        
         const radius = 3.5;
         const theta = Math.random() * Math.PI * 2;
         const phi = Math.acos(2 * Math.random() - 1);
@@ -377,7 +385,6 @@
         nodes.push(node);
       }
 
-      // Linhas
       const lineMaterial = new THREE.LineBasicMaterial({
         color: 0x67e8f9,
         transparent: true,
@@ -393,7 +400,6 @@
         for (let i = 0; i < nodes.length; i++) {
           for (let j = i + 1; j < nodes.length; j++) {
             const distance = nodes[i].position.distanceTo(nodes[j].position);
-            
             if (distance < 3.5) {
               const points = [nodes[i].position, nodes[j].position];
               const geometry = new THREE.BufferGeometry().setFromPoints(points);
@@ -405,7 +411,6 @@
         }
       }
 
-      // Luzes
       scene.add(new THREE.AmbientLight(0xffffff, 0.4));
       const pointLight = new THREE.PointLight(0xc026d3, 1.4, 100);
       pointLight.position.set(5, 4, 6);
@@ -416,7 +421,6 @@
       scene.add(pointLight2);
 
       camera.position.z = 6;
-
       let time = 0;
 
       function animate() {
@@ -426,7 +430,6 @@
         nodes.forEach((node, index) => {
           const speed = node.userData.speed;
           const original = node.userData.originalPosition;
-          
           node.position.x = original.x + Math.sin(time * speed + index) * 0.25;
           node.position.y = original.y + Math.cos(time * speed * 0.7 + index) * 0.2;
           node.position.z = original.z + Math.sin(time * speed * 0.5 + index) * 0.15;
