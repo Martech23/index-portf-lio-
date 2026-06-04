@@ -1,290 +1,73 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Martins Web | Gestor de Tráfego Pago</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', system-ui, sans-serif; }
-    .hero-bg { background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 100%); }
-  </style>
-</head>
-<body class="bg-zinc-950 text-zinc-200">
-
-  <!-- NAV -->
-  <nav class="fixed top-0 w-full z-50 bg-zinc-950/70 backdrop-blur-2xl border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-      <a href="index.html" class="flex items-center">
-        <img src="logo-martinsweb.png" alt="Martins Web" class="h-9 w-auto">
-      </a>
-
-      <div class="hidden lg:flex items-center gap-8 text-sm">
-        <a href="sobre.html" class="hover:text-violet-400 transition">Sobre</a>
-        <a href="#por-que-investir" class="hover:text-violet-400 transition">Por que Investir?</a>
-        <a href="#competencias" class="hover:text-violet-400 transition">Competências</a>
-        <a href="#ferramentas" class="hover:text-violet-400 transition">Ferramentas</a>
-        <a href="#cases" class="hover:text-violet-400 transition">Cases</a>
-        <a href="#contato" class="hover:text-violet-400 transition">Contato</a>
-      </div>
-
-      <div class="hidden lg:block">
-        <a href="https://wa.me/5511975321113" target="_blank"
-           class="bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-xl px-6 py-3 rounded-full text-sm font-semibold transition">
-          Falar no WhatsApp
-        </a>
-      </div>
-
-      <button id="menu-btn" class="lg:hidden text-white text-2xl focus:outline-none">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+<!-- CASES DE SUCESSO COM LOGOS -->
+<section id="cases" class="py-20 bg-zinc-900" data-aos="fade-up">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-5xl font-bold mb-6">O Poder do Tráfego Pago</h2>
+      <p class="text-xl text-zinc-400">Veja como grandes marcas nacionais e internacionais utilizam inteligência de anúncios para liderar mercados.</p>
     </div>
 
-    <!-- Menu Mobile -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-zinc-950/95 backdrop-blur-2xl border-b border-white/10 px-6 py-6 space-y-1 text-base transition-all duration-300">
-      <a href="sobre.html" class="block mobile-link hover:text-violet-400 transition py-3 border-b border-white/10">Sobre</a>
-      <a href="#por-que-investir" class="block mobile-link hover:text-violet-400 transition py-3 border-b border-white/10">Por que Investir?</a>
-      <a href="#competencias" class="block mobile-link hover:text-violet-400 transition py-3 border-b border-white/10">Competências</a>
-      <a href="#ferramentas" class="block mobile-link hover:text-violet-400 transition py-3 border-b border-white/10">Ferramentas</a>
-      <a href="#cases" class="block mobile-link hover:text-violet-400 transition py-3 border-b border-white/10">Cases</a>
-      <a href="#contato" class="block mobile-link hover:text-violet-400 transition py-3">Contato</a>
-      <a href="https://wa.me/5511975321113" target="_blank"
-         class="block bg-white/10 hover:bg-white/20 border border-white/20 text-center py-3 rounded-xl text-sm font-semibold transition mt-4">
-        Falar no WhatsApp
-      </a>
-    </div>
-  </nav>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-  <!-- HERO -->
-  <section class="hero-bg min-h-[92vh] flex items-center pt-16 pb-10" data-aos="fade-up">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <div class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-14 shadow-xl">
-        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full text-sm mb-6">
-          <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-          Disponível para novos projetos
+      <!-- Natura -->
+      <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="fa-solid fa-leaf text-2xl text-green-500"></i>
+          <h3 class="text-2xl font-bold">Natura</h3>
         </div>
-
-        <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tighter mb-6">
-          Martins Web<br>
-          <span class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-violet-400 bg-clip-text text-transparent">
-            Gestor de Tráfego Pago
-          </span>
-        </h1>
-
-        <p class="text-xl md:text-2xl text-zinc-300 max-w-2xl mx-auto mb-10">
-          Agência especializada em Marketing Digital, Tráfego Pago e Criação de Conteúdo que converte.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#contato" class="bg-white text-black px-10 py-4 rounded-2xl font-semibold hover:bg-zinc-100 transition">Vamos trabalhar juntos</a>
-          <a href="sobre.html" class="bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-xl px-10 py-4 rounded-2xl font-semibold transition">Conheça nossa metodologia</a>
-        </div>
+        <div class="text-xs font-semibold uppercase tracking-wider text-violet-400 mb-3">Nacional</div>
+        <p class="text-zinc-400 text-sm">Integração de Meta e Google Ads com páginas personalizadas para escalar e-commerce de forma massiva.</p>
       </div>
 
-      <div class="flex justify-center gap-8 mt-8 text-sm text-zinc-400">
-        <div>Recife, PE</div>
-        <div>+10 anos de experiência</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section class="py-20 bg-zinc-900" data-aos="fade-up">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-5xl font-bold mb-8">Objetivo Profissional</h2>
-      <p class="text-xl text-zinc-300 leading-relaxed">
-        Na Martins Web, unimos sólida experiência em plataformas de mídia digital, gerenciamento de contas publicitárias e análise de performance.
-      </p>
-    </div>
-  </section>
-
-  <!-- POR QUE INVESTIR -->
-  <section id="por-que-investir" class="py-20" data-aos="fade-up">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-5xl font-bold text-center mb-16">Por que pequenas e médias empresas devem investir em Marketing?</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800" data-aos="fade-up" data-aos-delay="100">
-          <div class="w-12 h-12 rounded-2xl bg-violet-500/10 flex items-center justify-center text-violet-400 mb-6 text-2xl"><i class="fa-solid fa-scale-balanced"></i></div>
-          <h3 class="text-2xl font-bold mb-4">Competitividade</h3>
-          <p class="text-zinc-400">O ambiente digital nivela o mercado. Sua empresa disputa espaço diretamente com gigantes do setor.</p>
+      <!-- Sallve -->
+      <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="150">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="fa-solid fa-heart text-2xl text-pink-500"></i>
+          <h3 class="text-2xl font-bold">Sallve</h3>
         </div>
-        <div class="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800" data-aos="fade-up" data-aos-delay="200">
-          <div class="w-12 h-12 rounded-2xl bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-400 mb-6 text-2xl"><i class="fa-solid fa-arrow-trend-up"></i></div>
-          <h3 class="text-2xl font-bold mb-4">Previsibilidade</h3>
-          <p class="text-zinc-400">O tráfego pago atua como uma fonte constante e controlável de novos clientes todos os dias.</p>
-        </div>
-        <div class="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800" data-aos="fade-up" data-aos-delay="300">
-          <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-6 text-2xl"><i class="fa-solid fa-calculator"></i></div>
-          <h3 class="text-2xl font-bold mb-4">Decisões por Dados</h3>
-          <p class="text-zinc-400">Tudo é mensurável. Saiba exatamente o retorno do seu investimento.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPETÊNCIAS -->
-  <section id="competencias" class="py-20 bg-zinc-900" data-aos="fade-up">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-5xl font-bold text-center mb-16">Competências</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="100">
-          <i class="fa-solid fa-chart-line text-4xl text-violet-400 mb-6"></i>
-          <h3 class="text-2xl font-semibold mb-4">Gestão de Tráfego Pago</h3>
-          <p class="text-zinc-400">Meta Ads e Google Ads com foco em resultados.</p>
-        </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="200">
-          <i class="fa-solid fa-magnifying-glass-chart text-4xl text-fuchsia-400 mb-6"></i>
-          <h3 class="text-2xl font-semibold mb-4">Análise de Dados</h3>
-          <p class="text-zinc-400">Google Analytics, AdSense e otimização de performance.</p>
-        </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="300">
-          <i class="fa-solid fa-pen-nib text-4xl text-cyan-400 mb-6"></i>
-          <h3 class="text-2xl font-semibold mb-4">Criação de Sites & Automação</h3>
-          <p class="text-zinc-400">Desenvolvimento de sites e automação via WhatsApp.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FERRAMENTAS (ADICIONADA) -->
-  <section id="ferramentas" class="py-20" data-aos="fade-up">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-5xl font-bold text-center mb-16">Ferramentas & Plataformas</h2>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="100">
-          <div class="flex items-center gap-4 mb-4">
-            <i class="fa-brands fa-google text-3xl text-blue-400"></i>
-            <span class="font-semibold text-lg">Google Ads</span>
-          </div>
-          <p class="text-zinc-400 text-sm">Campanhas cirúrgicas na rede de pesquisa e YouTube para atrair clientes prontos para comprar.</p>
-        </div>
-
-        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="150">
-          <div class="flex items-center gap-4 mb-4">
-            <i class="fa-brands fa-meta text-3xl text-blue-600"></i>
-            <span class="font-semibold text-lg">Meta Ads</span>
-          </div>
-          <p class="text-zinc-400 text-sm">Anúncios altamente segmentados no Instagram e Facebook com foco em conversão.</p>
-        </div>
-
-        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="200">
-          <div class="flex items-center gap-4 mb-4">
-            <i class="fa-solid fa-store text-3xl text-red-400"></i>
-            <span class="font-semibold text-lg">Google Meu Negócio</span>
-          </div>
-          <p class="text-zinc-400 text-sm">Posicionamento local estratégico para ser encontrado no Google Maps.</p>
-        </div>
-
-        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="250">
-          <div class="flex items-center gap-4 mb-4">
-            <i class="fa-solid fa-chart-bar text-3xl text-emerald-400"></i>
-            <span class="font-semibold text-lg">Google Analytics</span>
-          </div>
-          <p class="text-zinc-400 text-sm">Análise profunda de dados e comportamento do usuário para otimizar ROI.</p>
-        </div>
-
-        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="300">
-          <div class="flex items-center gap-4 mb-4">
-            <i class="fa-solid fa-globe text-3xl text-violet-400"></i>
-            <span class="font-semibold text-lg">Criação de Sites</span>
-          </div>
-          <p class="text-zinc-400 text-sm">Sites modernos, rápidos, responsivos e otimizados para SEO.</p>
-        </div>
-
-        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="350">
-          <div class="flex items-center gap-4 mb-4">
-            <i class="fa-brands fa-whatsapp text-3xl text-emerald-500"></i>
-            <span class="font-semibold text-lg">Automação WhatsApp</span>
-          </div>
-          <p class="text-zinc-400 text-sm">Funis inteligentes de atendimento automatizado 24h por dia.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CASES DE SUCESSO -->
-  <section id="cases" class="py-20 bg-zinc-900" data-aos="fade-up">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-5xl font-bold mb-6">O Poder do Tráfego Pago</h2>
-        <p class="text-xl text-zinc-400">Veja como grandes marcas utilizam inteligência de anúncios para liderar mercados.</p>
+        <div class="text-xs font-semibold uppercase tracking-wider text-violet-400 mb-3">Nacional</div>
+        <p class="text-zinc-400 text-sm">Uso estratégico de UGC e tráfego focado em conteúdo, tornando-se referência em D2C no Brasil.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="100">
-          <div class="text-xs font-semibold uppercase tracking-wider text-violet-400 mb-2">Nacional</div>
-          <h3 class="text-2xl font-bold mb-4">Natura</h3>
-          <p class="text-zinc-400 text-sm">Integração de Meta e Google Ads com páginas personalizadas para escalar e-commerce.</p>
+      <!-- Localiza -->
+      <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="fa-solid fa-car text-2xl text-blue-400"></i>
+          <h3 class="text-2xl font-bold">Localiza</h3>
         </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="200">
-          <div class="text-xs font-semibold uppercase tracking-wider text-violet-400 mb-2">Nacional</div>
-          <h3 class="text-2xl font-bold mb-4">Sallve</h3>
-          <p class="text-zinc-400 text-sm">Uso estratégico de UGC e tráfego focado em conteúdo, tornando-se referência em D2C.</p>
-        </div>
-        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="300">
-          <div class="text-xs font-semibold uppercase tracking-wider text-violet-400 mb-2">Nacional</div>
-          <h3 class="text-2xl font-bold mb-4">Localiza</h3>
-          <p class="text-zinc-400 text-sm">Domínio da pesquisa do Google e geolocalização para capturar clientes com alta intenção.</p>
-        </div>
+        <div class="text-xs font-semibold uppercase tracking-wider text-violet-400 mb-3">Nacional</div>
+        <p class="text-zinc-400 text-sm">Domínio da pesquisa do Google e geolocalização cirúrgica para capturar clientes com alta intenção.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- CONTATO -->
-  <section id="contato" class="py-20" data-aos="fade-up">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <h2 class="text-5xl font-bold mb-8">Vamos elevar seus resultados?</h2>
-      <div class="flex flex-col sm:flex-row gap-6 justify-center">
-        <a href="mailto:davidmartins1399@gmail.com" class="bg-zinc-800 hover:bg-zinc-700 px-10 py-5 rounded-2xl flex items-center justify-center gap-3 text-lg transition">
-          <i class="fa-solid fa-envelope"></i> Enviar E-mail
-        </a>
-        <a href="https://wa.me/5511975321113" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 px-10 py-5 rounded-2xl flex items-center justify-center gap-3 text-lg transition">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp
-        </a>
+      <!-- Amazon -->
+      <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="250">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="fa-brands fa-amazon text-2xl text-orange-400"></i>
+          <h3 class="text-2xl font-bold">Amazon</h3>
+        </div>
+        <div class="text-xs font-semibold uppercase tracking-wider text-fuchsia-400 mb-3">Internacional</div>
+        <p class="text-zinc-400 text-sm">Remarketing agressivo e domínio global do Google Shopping com anúncios dinâmicos hiperpersonalizados.</p>
       </div>
+
+      <!-- Airbnb -->
+      <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="fa-solid fa-home text-2xl text-red-400"></i>
+          <h3 class="text-2xl font-bold">Airbnb</h3>
+        </div>
+        <div class="text-xs font-semibold uppercase tracking-wider text-fuchsia-400 mb-3">Internacional</div>
+        <p class="text-zinc-400 text-sm">Divisão perfeita entre branding e campanhas de performance com forte apelo visual para reservas globais.</p>
+      </div>
+
+      <!-- Wellhub -->
+      <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="350">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="fa-solid fa-dumbbell text-2xl text-emerald-400"></i>
+          <h3 class="text-2xl font-bold">Wellhub (Gympass)</h3>
+        </div>
+        <div class="text-xs font-semibold uppercase tracking-wider text-fuchsia-400 mb-3">Internacional</div>
+        <p class="text-zinc-400 text-sm">Tráfego B2B estratégico via LinkedIn Ads direcionado a cargos de decisão (RH) para expansão global.</p>
+      </div>
+
     </div>
-  </section>
-
-  <footer class="py-12 border-t border-zinc-800 text-center text-zinc-500 text-sm">
-    © 2026 Martins Web • Gestor de Tráfego Pago & Marketing Digital
-  </footer>
-
-  <!-- SCRIPTS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true,
-      easing: 'ease-out-cubic'
-    });
-
-    // Menu Mobile
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-
-    function openMenu() {
-      mobileMenu.classList.remove('hidden');
-      mobileMenu.classList.remove('opacity-0', '-translate-y-4');
-      mobileMenu.classList.add('opacity-100', 'translate-y-0');
-    }
-
-    function closeMenu() {
-      mobileMenu.classList.add('opacity-0', '-translate-y-4');
-      mobileMenu.classList.remove('opacity-100', 'translate-y-0');
-      setTimeout(() => mobileMenu.classList.add('hidden'), 300);
-    }
-
-    menuBtn.addEventListener('click', () => {
-      if (mobileMenu.classList.contains('hidden')) openMenu();
-      else closeMenu();
-    });
-
-    mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
-  </script>
-
-</body>
-</html>
+  </div>
+</section>
