@@ -57,37 +57,55 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero-bg min-h-[92vh] flex items-center pt-16 pb-10" data-aos="fade-up">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <div class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-14 shadow-xl">
-        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full text-sm mb-6">
+  <!-- HERO FUTURISTA -->
+  <section class="hero-bg min-h-[95vh] flex items-center pt-16 pb-10 relative overflow-hidden" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+      
+      <!-- Glass Card Futurista -->
+      <div class="bg-white/5 backdrop-blur-2xl border border-white/20 rounded-3xl p-10 md:p-16 shadow-2xl relative overflow-hidden">
+        
+        <!-- Brilho interno futurista -->
+        <div class="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-cyan-500/10 pointer-events-none"></div>
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/30 px-5 py-2 rounded-full text-sm mb-8 backdrop-blur-xl">
           <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-          Disponível para novos projetos
+          <span class="text-white/90">Disponível para novos projetos • 2026</span>
         </div>
 
-        <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tighter mb-6">
+        <!-- Título -->
+        <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6">
           Martins Web<br>
-          <span class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-violet-400 bg-clip-text text-transparent">
+          <span class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
             Gestor de Tráfego Pago
           </span>
         </h1>
 
-        <p class="text-xl md:text-2xl text-zinc-300 max-w-2xl mx-auto mb-10">
-          Agência especializada em Marketing Digital, Tráfego Pago e Criação de Conteúdo que converte.
+        <!-- Subtítulo -->
+        <p class="text-2xl md:text-3xl text-white/80 max-w-3xl mx-auto mb-10 tracking-tight">
+          Agência de performance digital que combina tecnologia, estratégia e resultados reais.
         </p>
 
+        <!-- Botões -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#contato" class="bg-white text-black px-10 py-4 rounded-2xl font-semibold hover:bg-zinc-100 transition">Vamos trabalhar juntos</a>
-          <a href="sobre.html" class="bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-xl px-10 py-4 rounded-2xl font-semibold transition">Conheça nossa metodologia</a>
+          <a href="#contato" class="bg-white text-black px-10 py-4 rounded-2xl font-semibold hover:bg-zinc-100 transition text-lg">
+            Vamos trabalhar juntos
+          </a>
+          <a href="sobre.html" class="bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-xl px-10 py-4 rounded-2xl font-semibold transition text-lg">
+            Conheça nossa metodologia
+          </a>
         </div>
       </div>
 
-      <div class="flex justify-center gap-8 mt-8 text-sm text-zinc-400">
+      <!-- Informações -->
+      <div class="flex justify-center gap-8 mt-8 text-sm text-white/60">
         <div>Recife, PE</div>
         <div>+10 anos de experiência</div>
       </div>
     </div>
+
+    <!-- Linha decorativa futurista -->
+    <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
   </section>
 
   <!-- SOBRE -->
@@ -108,17 +126,17 @@
         <div class="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800" data-aos="fade-up" data-aos-delay="100">
           <div class="w-12 h-12 rounded-2xl bg-violet-500/10 flex items-center justify-center text-violet-400 mb-6 text-2xl"><i class="fa-solid fa-scale-balanced"></i></div>
           <h3 class="text-2xl font-bold mb-4">Competitividade</h3>
-          <p class="text-zinc-400">O ambiente digital nivela o mercado. Com as ferramentas certas, sua empresa compete diretamente com grandes players do setor.</p>
+          <p class="text-zinc-400">O ambiente digital nivela o mercado. Com as ferramentas certas, sua empresa compete diretamente com grandes players.</p>
         </div>
         <div class="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800" data-aos="fade-up" data-aos-delay="200">
           <div class="w-12 h-12 rounded-2xl bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-400 mb-6 text-2xl"><i class="fa-solid fa-arrow-trend-up"></i></div>
           <h3 class="text-2xl font-bold mb-4">Previsibilidade</h3>
-          <p class="text-zinc-400">Deixe de depender apenas de indicações ou tráfego orgânico. O tráfego pago oferece uma fonte constante e controlável de clientes.</p>
+          <p class="text-zinc-400">O tráfego pago oferece uma fonte constante e controlável de novos clientes todos os dias.</p>
         </div>
         <div class="bg-zinc-900/50 p-8 rounded-3xl border border-zinc-800" data-aos="fade-up" data-aos-delay="300">
           <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-6 text-2xl"><i class="fa-solid fa-calculator"></i></div>
           <h3 class="text-2xl font-bold mb-4">Decisões por Dados</h3>
-          <p class="text-zinc-400">Tudo é mensurável. Saiba exatamente quanto custa adquirir um cliente e qual o retorno real do seu investimento.</p>
+          <p class="text-zinc-400">Tudo é mensurável. Saiba exatamente quanto custa adquirir um cliente e qual o retorno real do investimento.</p>
         </div>
       </div>
     </div>
@@ -148,91 +166,54 @@
     </div>
   </section>
 
-  <!-- FERRAMENTAS (COM DESCRIÇÕES REFINADAS) -->
+  <!-- FERRAMENTAS (COMPLETA) -->
   <section id="ferramentas" class="py-20" data-aos="fade-up">
     <div class="max-w-7xl mx-auto px-6">
       <h2 class="text-5xl font-bold text-center mb-16">Ferramentas & Plataformas</h2>
-      
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- Google Ads -->
         <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="100">
-          <div class="flex items-center gap-4 mb-4">
-            <i class="fa-brands fa-google text-3xl text-blue-400"></i>
-            <span class="font-semibold text-lg">Google Ads</span>
-          </div>
+          <div class="flex items-center gap-4 mb-4"><i class="fa-brands fa-google text-3xl text-blue-400"></i><span class="font-semibold text-lg">Google Ads</span></div>
           <p class="text-zinc-400 text-sm">Criação e gestão de campanhas estratégicas na rede de pesquisa e YouTube, conectando sua marca a clientes com alta intenção de compra.</p>
         </div>
 
-        <!-- Meta Ads -->
         <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="150">
-          <div class="flex items-center gap-4 mb-4">
-            <i class="fa-brands fa-meta text-3xl text-blue-600"></i>
-            <span class="font-semibold text-lg">Meta Ads</span>
-          </div>
+          <div class="flex items-center gap-4 mb-4"><i class="fa-brands fa-meta text-3xl text-blue-600"></i><span class="font-semibold text-lg">Meta Ads</span></div>
           <p class="text-zinc-400 text-sm">Campanhas segmentadas no Instagram e Facebook com foco em geração de leads, engajamento e conversões de alta qualidade.</p>
         </div>
 
-        <!-- Google Meu Negócio -->
         <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="200">
-          <div class="flex items-center gap-4 mb-4">
-            <i class="fa-solid fa-store text-3xl text-red-400"></i>
-            <span class="font-semibold text-lg">Google Meu Negócio</span>
-          </div>
+          <div class="flex items-center gap-4 mb-4"><i class="fa-solid fa-store text-3xl text-red-400"></i><span class="font-semibold text-lg">Google Meu Negócio</span></div>
           <p class="text-zinc-400 text-sm">Otimização e gestão do perfil da sua empresa no Google para aumentar a visibilidade local e atrair clientes da sua região.</p>
         </div>
 
-        <!-- Google Analytics -->
         <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="250">
-          <div class="flex items-center gap-4 mb-4">
-            <i class="fa-solid fa-chart-bar text-3xl text-emerald-400"></i>
-            <span class="font-semibold text-lg">Google Analytics</span>
-          </div>
+          <div class="flex items-center gap-4 mb-4"><i class="fa-solid fa-chart-bar text-3xl text-emerald-400"></i><span class="font-semibold text-lg">Google Analytics</span></div>
           <p class="text-zinc-400 text-sm">Análise avançada de dados e comportamento do usuário para identificar oportunidades e otimizar o desempenho das campanhas.</p>
         </div>
 
-        <!-- Google AdSense -->
         <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="300">
-          <div class="flex items-center gap-4 mb-4">
-            <i class="fa-solid fa-ad text-3xl text-orange-400"></i>
-            <span class="font-semibold text-lg">Google AdSense</span>
-          </div>
+          <div class="flex items-center gap-4 mb-4"><i class="fa-solid fa-ad text-3xl text-orange-400"></i><span class="font-semibold text-lg">Google AdSense</span></div>
           <p class="text-zinc-400 text-sm">Gestão estratégica de espaços publicitários em portais de conteúdo para maximizar receita e escalar resultados.</p>
         </div>
 
-        <!-- E-commerce & Landing Pages -->
         <div class="bg-zinc-950 border border-violet-500/40 rounded-3xl p-8 hover:border-violet-500 transition ring-1 ring-violet-500/20" data-aos="fade-up" data-aos-delay="350">
-          <div class="flex items-center gap-4 mb-4">
-            <i class="fa-solid fa-cart-shopping text-3xl text-fuchsia-400"></i>
-            <span class="font-semibold text-lg">E-commerce & Landing Pages</span>
-          </div>
+          <div class="flex items-center gap-4 mb-4"><i class="fa-solid fa-cart-shopping text-3xl text-fuchsia-400"></i><span class="font-semibold text-lg">E-commerce & Landing Pages</span></div>
           <p class="text-zinc-400 text-sm">Criação de lojas virtuais completas e páginas de alta conversão projetadas para transformar visitantes em clientes pagantes.</p>
         </div>
 
-        <!-- Criação de Sites -->
         <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="400">
-          <div class="flex items-center gap-4 mb-4">
-            <i class="fa-solid fa-globe text-3xl text-violet-400"></i>
-            <span class="font-semibold text-lg">Criação de Sites</span>
-          </div>
+          <div class="flex items-center gap-4 mb-4"><i class="fa-solid fa-globe text-3xl text-violet-400"></i><span class="font-semibold text-lg">Criação de Sites</span></div>
           <p class="text-zinc-400 text-sm">Desenvolvimento de sites institucionais modernos, rápidos, responsivos e otimizados para mecanismos de busca (SEO).</p>
         </div>
 
-        <!-- Automação WhatsApp -->
         <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="450">
-          <div class="flex items-center gap-4 mb-4">
-            <i class="fa-brands fa-whatsapp text-3xl text-emerald-500"></i>
-            <span class="font-semibold text-lg">Automação WhatsApp</span>
-          </div>
+          <div class="flex items-center gap-4 mb-4"><i class="fa-brands fa-whatsapp text-3xl text-emerald-500"></i><span class="font-semibold text-lg">Automação WhatsApp</span></div>
           <p class="text-zinc-400 text-sm">Implementação de funis automatizados de atendimento para qualificar leads, agilizar vendas e oferecer suporte 24 horas por dia.</p>
         </div>
 
-        <!-- Copywriting & Conteúdo -->
         <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 hover:border-violet-500 transition" data-aos="fade-up" data-aos-delay="500">
-          <div class="flex items-center gap-4 mb-4">
-            <i class="fa-solid fa-pen-to-square text-3xl text-fuchsia-400"></i>
-            <span class="font-semibold text-lg">Copywriting & Conteúdo</span>
-          </div>
+          <div class="flex items-center gap-4 mb-4"><i class="fa-solid fa-pen-to-square text-3xl text-fuchsia-400"></i><span class="font-semibold text-lg">Copywriting & Conteúdo</span></div>
           <p class="text-zinc-400 text-sm">Produção de textos persuasivos e estratégicos para anúncios, sites e materiais que geram conexão e aumentam as taxas de conversão.</p>
         </div>
 
@@ -240,7 +221,7 @@
     </div>
   </section>
 
-  <!-- CASES DE SUCESSO -->
+  <!-- CASES DE SUCESSO COM ÍCONES -->
   <section id="cases" class="py-20 bg-zinc-900" data-aos="fade-up">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -252,62 +233,44 @@
 
         <!-- Natura -->
         <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="100">
-          <div class="flex items-center gap-3 mb-4">
-            <i class="fa-solid fa-leaf text-2xl text-green-500"></i>
-            <h3 class="text-2xl font-bold">Natura</h3>
-          </div>
+          <div class="flex items-center gap-3 mb-4"><i class="fa-solid fa-leaf text-2xl text-green-500"></i><h3 class="text-2xl font-bold">Natura</h3></div>
           <div class="text-xs font-semibold uppercase tracking-wider text-violet-400 mb-3">Nacional</div>
           <p class="text-zinc-400 text-sm">Integração de Meta e Google Ads com páginas personalizadas para escalar e-commerce de forma massiva.</p>
         </div>
 
         <!-- Sallve -->
         <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="150">
-          <div class="flex items-center gap-3 mb-4">
-            <i class="fa-solid fa-heart text-2xl text-pink-500"></i>
-            <h3 class="text-2xl font-bold">Sallve</h3>
-          </div>
+          <div class="flex items-center gap-3 mb-4"><i class="fa-solid fa-heart text-2xl text-pink-500"></i><h3 class="text-2xl font-bold">Sallve</h3></div>
           <div class="text-xs font-semibold uppercase tracking-wider text-violet-400 mb-3">Nacional</div>
-          <p class="text-zinc-400 text-sm">Uso estratégico de UGC e tráfego focado em conteúdo, tornando-se uma das maiores referências de D2C do Brasil.</p>
+          <p class="text-zinc-400 text-sm">Uso estratégico de UGC e tráfego focado em conteúdo, tornando-se referência em D2C no Brasil.</p>
         </div>
 
         <!-- Localiza -->
         <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="200">
-          <div class="flex items-center gap-3 mb-4">
-            <i class="fa-solid fa-car text-2xl text-blue-400"></i>
-            <h3 class="text-2xl font-bold">Localiza</h3>
-          </div>
+          <div class="flex items-center gap-3 mb-4"><i class="fa-solid fa-car text-2xl text-blue-400"></i><h3 class="text-2xl font-bold">Localiza</h3></div>
           <div class="text-xs font-semibold uppercase tracking-wider text-violet-400 mb-3">Nacional</div>
-          <p class="text-zinc-400 text-sm">Domínio da pesquisa do Google e geolocalização cirúrgica para capturar clientes com alta intenção de compra imediata.</p>
+          <p class="text-zinc-400 text-sm">Domínio da pesquisa do Google e geolocalização cirúrgica para capturar clientes com alta intenção de compra.</p>
         </div>
 
         <!-- Amazon -->
         <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="250">
-          <div class="flex items-center gap-3 mb-4">
-            <i class="fa-brands fa-amazon text-2xl text-orange-400"></i>
-            <h3 class="text-2xl font-bold">Amazon</h3>
-          </div>
+          <div class="flex items-center gap-3 mb-4"><i class="fa-brands fa-amazon text-2xl text-orange-400"></i><h3 class="text-2xl font-bold">Amazon</h3></div>
           <div class="text-xs font-semibold uppercase tracking-wider text-fuchsia-400 mb-3">Internacional</div>
-          <p class="text-zinc-400 text-sm">Remarketing agressivo e domínio global do Google Shopping com anúncios dinâmicos hiperpersonalizados baseados no comportamento do usuário.</p>
+          <p class="text-zinc-400 text-sm">Remarketing agressivo e domínio global do Google Shopping com anúncios dinâmicos hiperpersonalizados.</p>
         </div>
 
         <!-- Airbnb -->
         <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="300">
-          <div class="flex items-center gap-3 mb-4">
-            <i class="fa-solid fa-home text-2xl text-red-400"></i>
-            <h3 class="text-2xl font-bold">Airbnb</h3>
-          </div>
+          <div class="flex items-center gap-3 mb-4"><i class="fa-solid fa-home text-2xl text-red-400"></i><h3 class="text-2xl font-bold">Airbnb</h3></div>
           <div class="text-xs font-semibold uppercase tracking-wider text-fuchsia-400 mb-3">Internacional</div>
-          <p class="text-zinc-400 text-sm">Divisão perfeita entre branding institucional e campanhas de performance com forte apelo visual para gerar reservas globais aceleradas.</p>
+          <p class="text-zinc-400 text-sm">Divisão perfeita entre branding e campanhas de performance com forte apelo visual para reservas globais.</p>
         </div>
 
         <!-- Wellhub -->
         <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8" data-aos="fade-up" data-aos-delay="350">
-          <div class="flex items-center gap-3 mb-4">
-            <i class="fa-solid fa-dumbbell text-2xl text-emerald-400"></i>
-            <h3 class="text-2xl font-bold">Wellhub (Gympass)</h3>
-          </div>
+          <div class="flex items-center gap-3 mb-4"><i class="fa-solid fa-dumbbell text-2xl text-emerald-400"></i><h3 class="text-2xl font-bold">Wellhub (Gympass)</h3></div>
           <div class="text-xs font-semibold uppercase tracking-wider text-fuchsia-400 mb-3">Internacional</div>
-          <p class="text-zinc-400 text-sm">Tráfego B2B estratégico via LinkedIn Ads direcionado a cargos de tomada de decisão (RH), expandindo operação corporativa global.</p>
+          <p class="text-zinc-400 text-sm">Tráfego B2B estratégico via LinkedIn Ads direcionado a cargos de decisão (RH) para expansão global.</p>
         </div>
 
       </div>
