@@ -15,7 +15,31 @@
 <body class="bg-zinc-950 text-zinc-200">
 
   <!-- NAV -->
-  <nav class="fixed top-0 w-full z-50 bg-zinc-950/90 border-b border-zinc-800 backdrop-blur-lg">
+<nav class="fixed top-0 w-full z-50 bg-zinc-950/70 backdrop-blur-2xl border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center">
+      <img src="logo-martinsweb.png" alt="Martins Web" class="h-9 w-auto">
+    </a>
+
+    <!-- Menu Desktop -->
+    <div class="hidden lg:flex items-center gap-8 text-sm">
+      <a href="sobre.html" class="hover:text-violet-400 transition">Sobre</a>
+      <a href="#por-que-investir" class="hover:text-violet-400 transition">Por que Investir?</a>
+      <a href="#competencias" class="hover:text-violet-400 transition">Competências</a>
+      <a href="#cases" class="hover:text-violet-400 transition">Cases</a>
+      <a href="#contato" class="hover:text-violet-400 transition">Contato</a>
+    </div>
+
+    <div class="hidden lg:block">
+      <a href="https://wa.me/5511975321113" target="_blank"
+         class="bg-white/10 hover:bg-white/20 backdrop-blur-xl border border-white/20 px-6 py-3 rounded-full text-sm font-semibold transition">
+        Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+</nav>
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <a href="index.html" class="flex items-center">
   <img 
@@ -64,46 +88,44 @@
   </nav>
   
 <!-- HERO MELHORADO -->
-<section class="hero-bg min-h-[90vh] flex items-center pt-16 pb-12">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+<section class="hero-bg min-h-[92vh] flex items-center pt-20">
+  <div class="max-w-5xl mx-auto px-6 text-center">
     
-    <!-- Texto -->
-    <div class="space-y-6">
-      <div class="inline-flex items-center gap-2 bg-zinc-900 border border-violet-500/30 px-4 py-2 rounded-full text-sm">
+    <!-- Glass Card -->
+    <div class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-12 md:p-16 shadow-2xl">
+      
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-1.5 rounded-full text-sm mb-6">
         <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
         Disponível para novos projetos
       </div>
-      
-      <h1 class="text-6xl md:text-7xl font-bold leading-tight">
+
+      <h1 class="text-6xl md:text-7xl font-bold leading-tight tracking-tighter mb-6">
         Martins Web<br>
-        <span class="gradient-text">Gestor de Tráfego Pago</span>
+        <span class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-violet-400 bg-clip-text text-transparent">
+          Gestor de Tráfego Pago
+        </span>
       </h1>
-      
-      <p class="text-2xl text-zinc-400">
-        Especialista em Marketing Digital • Performance • Tráfego Pago
+
+      <p class="text-2xl text-zinc-300 max-w-2xl mx-auto mb-10">
+        Agência especializada em Marketing Digital, Tráfego Pago e Criação de Conteúdo que converte.
       </p>
-      
-      <div class="flex flex-wrap gap-4 pt-2">
-        <a href="#contato" class="bg-white text-black px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition">
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contato" 
+           class="bg-white text-black px-10 py-4 rounded-2xl font-semibold hover:bg-zinc-100 transition">
           Vamos trabalhar juntos
         </a>
-        <a href="sobre.html" class="bg-zinc-900 border border-zinc-800 hover:border-violet-500 px-8 py-4 rounded-2xl font-semibold transition">
-          Conheça minha história
+        <a href="sobre.html" 
+           class="bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-xl px-10 py-4 rounded-2xl font-semibold transition">
+          Conheça nossa metodologia
         </a>
       </div>
-
-      <div class="flex items-center gap-8 pt-4 text-sm">
-        <div>Recife, PE</div>
-        <div class="text-emerald-400">•</div>
-        <div>+ 10 anos de experiência</div>
-      </div>
     </div>
-    
-    <!-- Foto -->
-    <div class="hidden md:flex justify-center">
-      <div class="w-80 h-80 bg-zinc-900 rounded-3xl overflow-hidden shadow-2xl shadow-violet-500/20 border border-zinc-800">
-        <img src="315646.png" alt="Martins Web" class="w-full h-full object-cover object-top">
-      </div>
+
+    <!-- Trust signals -->
+    <div class="flex justify-center gap-8 mt-8 text-sm text-zinc-400">
+      <div>Recife, PE</div>
+      <div>+10 anos de experiência</div>
     </div>
 
   </div>
