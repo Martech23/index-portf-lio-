@@ -15,6 +15,7 @@
 <body class="bg-zinc-950 text-zinc-200">
 
   <!-- NAV -->
+<!-- NAV COM GLASSMORPHISM + HAMBÚRGUER -->
 <nav class="fixed top-0 w-full z-50 bg-zinc-950/70 backdrop-blur-2xl border-b border-white/10">
   <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
     
@@ -32,60 +33,34 @@
       <a href="#contato" class="hover:text-violet-400 transition">Contato</a>
     </div>
 
+    <!-- Botão WhatsApp Desktop -->
     <div class="hidden lg:block">
       <a href="https://wa.me/5511975321113" target="_blank"
-         class="bg-white/10 hover:bg-white/20 backdrop-blur-xl border border-white/20 px-6 py-3 rounded-full text-sm font-semibold transition">
+         class="bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-xl px-6 py-3 rounded-full text-sm font-semibold transition">
         Falar no WhatsApp
       </a>
     </div>
+
+    <!-- Botão Hambúrguer (Mobile) -->
+    <button id="menu-btn" class="lg:hidden text-white text-2xl focus:outline-none" aria-label="Abrir Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Menu Mobile Dropdown -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-zinc-950/95 backdrop-blur-2xl border-b border-white/10 px-6 py-6 space-y-4 text-base">
+    <a href="sobre.html" class="block hover:text-violet-400 transition py-2 border-b border-white/10">Sobre</a>
+    <a href="#por-que-investir" class="block mobile-link hover:text-violet-400 transition py-2 border-b border-white/10">Por que Investir?</a>
+    <a href="#competencias" class="block mobile-link hover:text-violet-400 transition py-2 border-b border-white/10">Competências</a>
+    <a href="#cases" class="block mobile-link hover:text-violet-400 transition py-2 border-b border-white/10">Cases</a>
+    <a href="#contato" class="block mobile-link hover:text-violet-400 transition py-2">Contato</a>
+    
+    <a href="https://wa.me/5511975321113" target="_blank"
+       class="block bg-white/10 hover:bg-white/20 border border-white/20 text-center py-3 rounded-xl text-sm font-semibold transition mt-4">
+      Falar no WhatsApp
+    </a>
   </div>
 </nav>
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-      <a href="index.html" class="flex items-center">
-  <img 
-    src="logo-martinsweb.png" 
-    alt="Martins Web - Gestor de Tráfego Pago" 
-    class="h-12 w-auto"
-  >
-      </a>
-      
-      <!-- Menu Desktop (Escondido no Mobile) -->
-      <div class="hidden lg:flex space-x-8 text-sm">
-        <a href="sobre.html" class="hover:text-violet-400 transition">Sobre</a>
-        <a href="#por-que-investir" class="hover:text-violet-400 transition">Por que Investir?</a>
-        <a href="#competencias" class="hover:text-violet-400 transition">Competências</a>
-        <a href="#cases" class="hover:text-violet-400 transition">Cases de Sucesso</a>
-        <a href="#ferramentas" class="hover:text-violet-400 transition">Ferramentas</a>
-        <a href="#contato" class="hover:text-violet-400 transition">Contato</a>
-      </div>
-      
-      <div class="hidden lg:block">
-        <a href="https://wa.me/5511975321113" target="_blank" rel="noopener noreferrer"
-           class="bg-violet-600 hover:bg-violet-500 px-6 py-3 rounded-full text-sm font-semibold transition">
-          Falar no WhatsApp
-        </a>
-      </div>
-
-      <!-- Botão do Menu Mobile (Hambúrguer) -->
-      <button id="menu-btn" class="lg:hidden text-white text-2xl focus:outline-none" aria-label="Abrir Menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </div>
-
-    <!-- Menu Mobile Dropdown (Inicia escondido) -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-zinc-950 border-b border-zinc-800 px-6 py-6 space-y-4 text-base">
-      <a href="sobre.html" class="block hover:text-violet-400 transition py-2 border-b border-zinc-900">Sobre</a>
-      <a href="#por-que-investir" class="block mobile-link hover:text-violet-400 transition py-2 border-b border-zinc-900">Por que Investir?</a>
-      <a href="#competencias" class="block mobile-link hover:text-violet-400 transition py-2 border-b border-zinc-900">Competências</a>
-      <a href="#cases" class="block mobile-link hover:text-violet-400 transition py-2 border-b border-zinc-900">Cases de Sucesso</a>
-      <a href="#ferramentas" class="block mobile-link hover:text-violet-400 transition py-2 border-b border-zinc-900">Ferramentas</a>
-      <a href="#contato" class="block mobile-link hover:text-violet-400 transition py-2">Contato</a>
-      <a href="https://wa.me/5511975321113" target="_blank" rel="noopener noreferrer"
-         class="block bg-violet-600 hover:bg-violet-500 text-center py-3 rounded-xl text-sm font-semibold transition mt-4">
-        Falar no WhatsApp
-      </a>
-    </div>
-  </nav>
   
 <!-- HERO MELHORADO -->
 <section class="hero-bg min-h-[92vh] flex items-center pt-20">
