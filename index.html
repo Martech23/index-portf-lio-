@@ -10,11 +10,26 @@
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     .hero-bg { background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 100%); }
+
+    /* Gradiente Animado */
+    .animated-gradient {
+      background: linear-gradient(270deg, #c026d3, #7c3aed, #22d3ee, #c026d3);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 8s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
   </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
 
-  <!-- NAV SEM BORDA FORTE -->
+  <!-- NAV -->
   <nav class="fixed top-0 w-full z-50 bg-zinc-950/70 backdrop-blur-2xl">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <a href="index.html" class="flex items-center">
@@ -57,14 +72,13 @@
     </div>
   </nav>
 
-  <!-- HERO FUTURISTA SEM BORDA FORTE -->
+  <!-- HERO COM GRADIENTE ANIMADO -->
   <section class="hero-bg min-h-[95vh] flex items-center pt-16 pb-10 relative overflow-hidden" data-aos="fade-up">
     <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
       
-      <!-- Glass Card sem borda forte -->
       <div class="bg-white/5 backdrop-blur-2xl rounded-3xl p-10 md:p-16 shadow-2xl relative overflow-hidden">
         
-        <!-- Brilho interno futurista -->
+        <!-- Brilho interno -->
         <div class="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-cyan-500/10 pointer-events-none"></div>
 
         <!-- Badge -->
@@ -73,10 +87,10 @@
           <span class="text-white/90">Disponível para novos projetos • 2026</span>
         </div>
 
-        <!-- Título -->
+        <!-- Título com Gradiente Animado -->
         <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6">
           Martins Web<br>
-          <span class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+          <span class="animated-gradient">
             Gestor de Tráfego Pago
           </span>
         </h1>
