@@ -10,61 +10,6 @@
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
 
-    .advanced-glass {
-      background: rgba(255, 255, 255, 0.055);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255,255,255,0.2);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .advanced-glass::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 45%;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, transparent 100%);
-      pointer-events: none;
-    }
-
-    .holographic::after {
-      content: '';
-      position: absolute;
-      top: -50%; left: -50%;
-      width: 200%; height: 200%;
-      background: linear-gradient(135deg, transparent 20%, rgba(255,255,255,0.25) 40%, rgba(103,232,249,0.3) 50%, rgba(192,38,211,0.25) 60%, transparent 80%);
-      animation: hologram-shine 3.5s linear infinite;
-      pointer-events: none;
-    }
-
-    @keyframes hologram-shine {
-      0% { transform: translateX(-100%) translateY(-100%) rotate(25deg); }
-      100% { transform: translateX(100%) translateY(100%) rotate(25deg); }
-    }
-
-    .animated-gradient {
-      background: linear-gradient(270deg, #c026d3, #7c3aed, #67e8f9, #c026d3);
-      background-size: 400% 400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradientShift 8s ease infinite;
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .modern-card {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .modern-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    }
-
     .mesh-bg {
       background: 
         radial-gradient(circle at 20% 30%, rgba(192, 38, 211, 0.12) 0%, transparent 50%),
@@ -77,6 +22,10 @@
         linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
       background-size: 4px 4px;
+    }
+
+    .hero-text {
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
     }
   </style>
 </head>
@@ -125,29 +74,33 @@
     </div>
   </nav>
 
-  <!-- HERO COM ANIMAÇÃO 3D TEMÁTICA -->
-  <section class="min-h-[95vh] flex items-center pt-16 pb-10 relative overflow-hidden mesh-bg grain" data-aos="fade-up">
+  <!-- HERO COM 3D FULL BACKGROUND -->
+  <section class="min-h-[100dvh] flex items-center relative overflow-hidden mesh-bg grain">
     
-    <!-- Canvas da Animação 3D (Rede de Dados) -->
-    <canvas id="three-canvas" class="absolute right-0 top-1/2 -translate-y-1/2 w-[520px] h-[520px] z-10 pointer-events-none hidden xl:block"></canvas>
+    <!-- Animação 3D Full Screen -->
+    <canvas id="three-canvas" class="absolute inset-0 w-full h-full z-0"></canvas>
 
+    <!-- Overlay para legibilidade do texto -->
+    <div class="absolute inset-0 bg-black/45 z-10"></div>
+
+    <!-- Texto por cima do 3D -->
     <div class="max-w-5xl mx-auto px-6 text-center relative z-20">
       
-      <div class="advanced-glass holographic rounded-3xl p-10 md:p-16 shadow-2xl">
+      <div class="max-w-4xl mx-auto">
         
-        <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full text-sm mb-8">
+        <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full text-sm mb-8 backdrop-blur-xl">
           <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
           <span class="text-white/90">Disponível para novos projetos • 2026</span>
         </div>
 
-        <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6">
+        <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6 hero-text">
           Martins Web<br>
-          <span class="animated-gradient">
+          <span class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
             Gestor de Tráfego Pago
           </span>
         </h1>
 
-        <p class="text-2xl md:text-3xl text-white/80 max-w-3xl mx-auto mb-10 tracking-tight">
+        <p class="text-2xl md:text-3xl text-white/90 max-w-3xl mx-auto mb-10 tracking-tight hero-text">
           Agência de performance digital que combina tecnologia, estratégia e resultados reais.
         </p>
 
@@ -155,15 +108,10 @@
           <a href="#contato" class="bg-white text-black px-10 py-4 rounded-2xl font-semibold hover:bg-zinc-100 transition text-lg">
             Vamos trabalhar juntos
           </a>
-          <a href="sobre.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-xl px-10 py-4 rounded-2xl font-semibold transition text-lg">
+          <a href="sobre.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-xl border border-white/30 px-10 py-4 rounded-2xl font-semibold transition text-lg">
             Conheça nossa metodologia
           </a>
         </div>
-      </div>
-
-      <div class="flex justify-center gap-8 mt-8 text-sm text-white/60">
-        <div>Recife, PE</div>
-        <div>+10 anos de experiência</div>
       </div>
     </div>
   </section>
@@ -381,137 +329,60 @@
 
     mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
 
-    // Partículas
-    function initParticles() {
-      const canvas = document.getElementById('particles-canvas');
-      if (!canvas) return;
-
-      const ctx = canvas.getContext('2d');
-      let particles = [];
-      const particleCount = 45;
-
-      function resizeCanvas() {
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-      }
-
-      class Particle {
-        constructor() {
-          this.x = Math.random() * canvas.width;
-          this.y = Math.random() * canvas.height;
-          this.size = Math.random() * 2 + 0.8;
-          this.speedX = (Math.random() - 0.5) * 0.3;
-          this.speedY = (Math.random() - 0.5) * 0.3;
-          this.opacity = Math.random() * 0.4 + 0.2;
-        }
-        update() {
-          this.x += this.speedX; this.y += this.speedY;
-          if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-          if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-        }
-        draw() {
-          ctx.fillStyle = `rgba(192, 38, 211, ${this.opacity})`;
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
-
-      function createParticles() {
-        particles = [];
-        for (let i = 0; i < particleCount; i++) particles.push(new Particle());
-      }
-
-      function connectParticles() {
-        for (let i = 0; i < particles.length; i++) {
-          for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            if (distance < 120) {
-              ctx.strokeStyle = `rgba(103, 232, 249, ${0.08 * (1 - distance / 120)})`;
-              ctx.lineWidth = 0.6;
-              ctx.beginPath();
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.stroke();
-            }
-          }
-        }
-      }
-
-      function animateParticles() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < particles.length; i++) {
-          particles[i].update();
-          particles[i].draw();
-        }
-        connectParticles();
-        requestAnimationFrame(animateParticles);
-      }
-
-      window.addEventListener('resize', () => { resizeCanvas(); createParticles(); });
-      resizeCanvas();
-      createParticles();
-      animateParticles();
-    }
-
-    // Three.js - Rede 3D de Dados (Clientes + Visibilidade)
+    // Three.js - Rede 3D Full Screen
     function initThreeJS() {
       const canvas = document.getElementById('three-canvas');
       if (!canvas) return;
 
       const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
       const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
 
-      renderer.setSize(520, 520);
+      renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-      // Nós (representando clientes/dados)
+      // Nós
       const nodes = [];
-      const nodeCount = 12;
-      const nodeGeometry = new THREE.SphereGeometry(0.12, 16, 16);
+      const nodeCount = 18;
+      const nodeGeometry = new THREE.SphereGeometry(0.13, 16, 16);
       const nodeMaterial = new THREE.MeshPhongMaterial({
         color: 0xc026d3,
         emissive: 0x7c3aed,
-        shininess: 80,
+        shininess: 70,
         transparent: true,
-        opacity: 0.9
+        opacity: 0.85
       });
 
       for (let i = 0; i < nodeCount; i++) {
         const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
         
-        // Posição aleatória em esfera
-        const radius = 1.8;
+        const radius = 3.5;
         const theta = Math.random() * Math.PI * 2;
         const phi = Math.acos(2 * Math.random() - 1);
         
         node.position.x = radius * Math.sin(phi) * Math.cos(theta);
         node.position.y = radius * Math.sin(phi) * Math.sin(theta);
-        node.position.z = radius * Math.cos(phi);
+        node.position.z = radius * Math.cos(phi) * 0.6;
         
         node.userData = {
           originalPosition: node.position.clone(),
-          speed: 0.3 + Math.random() * 0.4
+          speed: 0.2 + Math.random() * 0.5
         };
         
         scene.add(node);
         nodes.push(node);
       }
 
-      // Linhas conectando os nós
+      // Linhas
       const lineMaterial = new THREE.LineBasicMaterial({
         color: 0x67e8f9,
         transparent: true,
-        opacity: 0.25
+        opacity: 0.2
       });
 
       const lines = [];
 
       function updateConnections() {
-        // Remove linhas antigas
         lines.forEach(line => scene.remove(line));
         lines.length = 0;
 
@@ -519,7 +390,7 @@
           for (let j = i + 1; j < nodes.length; j++) {
             const distance = nodes[i].position.distanceTo(nodes[j].position);
             
-            if (distance < 2.2) {
+            if (distance < 3.5) {
               const points = [nodes[i].position, nodes[j].position];
               const geometry = new THREE.BufferGeometry().setFromPoints(points);
               const line = new THREE.Line(geometry, lineMaterial);
@@ -532,43 +403,46 @@
 
       // Luzes
       scene.add(new THREE.AmbientLight(0xffffff, 0.4));
-      const pointLight = new THREE.PointLight(0xc026d3, 1.2, 100);
-      pointLight.position.set(3, 3, 4);
+      const pointLight = new THREE.PointLight(0xc026d3, 1.4, 100);
+      pointLight.position.set(5, 4, 6);
       scene.add(pointLight);
 
-      const pointLight2 = new THREE.PointLight(0x67e8f9, 0.8, 100);
-      pointLight2.position.set(-3, -2, 4);
+      const pointLight2 = new THREE.PointLight(0x67e8f9, 1, 100);
+      pointLight2.position.set(-5, -3, 6);
       scene.add(pointLight2);
 
-      camera.position.z = 4.5;
+      camera.position.z = 6;
 
       let time = 0;
 
       function animate() {
         requestAnimationFrame(animate);
-        time += 0.01;
+        time += 0.008;
 
-        // Movimento suave dos nós
         nodes.forEach((node, index) => {
           const speed = node.userData.speed;
           const original = node.userData.originalPosition;
           
-          node.position.x = original.x + Math.sin(time * speed + index) * 0.15;
-          node.position.y = original.y + Math.cos(time * speed * 0.8 + index) * 0.15;
-          node.position.z = original.z + Math.sin(time * speed * 0.6 + index) * 0.1;
+          node.position.x = original.x + Math.sin(time * speed + index) * 0.25;
+          node.position.y = original.y + Math.cos(time * speed * 0.7 + index) * 0.2;
+          node.position.z = original.z + Math.sin(time * speed * 0.5 + index) * 0.15;
         });
 
-        // Atualiza conexões
         updateConnections();
-
         renderer.render(scene, camera);
       }
 
+      function onResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+
+      window.addEventListener('resize', onResize);
       animate();
     }
 
     window.onload = function() {
-      initParticles();
       initThreeJS();
     };
   </script>
