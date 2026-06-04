@@ -11,9 +11,52 @@
     body { font-family: 'Inter', system-ui, sans-serif; }
     .hero-bg { background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 100%); }
 
-    /* Gradiente Animado */
+    /* Glassmorphism Avançado */
+    .advanced-glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Reflexo de luz superior (specular highlight) */
+    .advanced-glass::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0.03) 50%,
+        transparent 100%
+      );
+      pointer-events: none;
+    }
+
+    /* Brilho interno colorido */
+    .advanced-glass::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, 
+        rgba(192, 38, 211, 0.08) 0%, 
+        transparent 50%, 
+        rgba(103, 232, 249, 0.08) 100%);
+      pointer-events: none;
+    }
+
+    /* Gradiente Animado no Título */
     .animated-gradient {
-      background: linear-gradient(270deg, #c026d3, #7c3aed, #22d3ee, #c026d3);
+      background: linear-gradient(270deg, #c026d3, #7c3aed, #67e8f9, #c026d3);
       background-size: 400% 400%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -72,15 +115,13 @@
     </div>
   </nav>
 
-  <!-- HERO COM GRADIENTE ANIMADO -->
+  <!-- HERO COM GLASSMORPHISM AVANÇADO -->
   <section class="hero-bg min-h-[95vh] flex items-center pt-16 pb-10 relative overflow-hidden" data-aos="fade-up">
     <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
       
-      <div class="bg-white/5 backdrop-blur-2xl rounded-3xl p-10 md:p-16 shadow-2xl relative overflow-hidden">
+      <!-- Glass Card Avançado -->
+      <div class="advanced-glass rounded-3xl p-10 md:p-16 shadow-2xl" data-aos="fade-up">
         
-        <!-- Brilho interno -->
-        <div class="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-cyan-500/10 pointer-events-none"></div>
-
         <!-- Badge -->
         <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full text-sm mb-8 backdrop-blur-xl">
           <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
@@ -117,6 +158,7 @@
       </div>
     </div>
 
+    <!-- Linha decorativa -->
     <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
   </section>
 
