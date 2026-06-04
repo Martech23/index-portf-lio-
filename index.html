@@ -25,7 +25,6 @@
       overflow: hidden;
     }
 
-    /* Reflexo de luz superior (specular highlight) */
     .advanced-glass::before {
       content: '';
       position: absolute;
@@ -33,28 +32,19 @@
       left: 0;
       right: 0;
       height: 40%;
-      background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.15) 0%,
-        rgba(255, 255, 255, 0.03) 50%,
-        transparent 100%
-      );
+      background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.03) 50%, transparent 100%);
       pointer-events: none;
     }
 
-    /* Brilho interno colorido */
     .advanced-glass::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, 
-        rgba(192, 38, 211, 0.08) 0%, 
-        transparent 50%, 
-        rgba(103, 232, 249, 0.08) 100%);
+      background: linear-gradient(135deg, rgba(192,38,211,0.08) 0%, transparent 50%, rgba(103,232,249,0.08) 100%);
       pointer-events: none;
     }
 
-    /* Gradiente Animado no Título */
+    /* Gradiente Animado */
     .animated-gradient {
       background: linear-gradient(270deg, #c026d3, #7c3aed, #67e8f9, #c026d3);
       background-size: 400% 400%;
@@ -115,20 +105,22 @@
     </div>
   </nav>
 
-  <!-- HERO COM GLASSMORPHISM AVANÇADO -->
+  <!-- HERO COM PARTÍCULAS -->
   <section class="hero-bg min-h-[95vh] flex items-center pt-16 pb-10 relative overflow-hidden" data-aos="fade-up">
+    
+    <!-- Canvas de Partículas -->
+    <canvas id="particles-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
     <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
       
       <!-- Glass Card Avançado -->
-      <div class="advanced-glass rounded-3xl p-10 md:p-16 shadow-2xl" data-aos="fade-up">
+      <div class="advanced-glass rounded-3xl p-10 md:p-16 shadow-2xl">
         
-        <!-- Badge -->
         <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full text-sm mb-8 backdrop-blur-xl">
           <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
           <span class="text-white/90">Disponível para novos projetos • 2026</span>
         </div>
 
-        <!-- Título com Gradiente Animado -->
         <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6">
           Martins Web<br>
           <span class="animated-gradient">
@@ -136,12 +128,10 @@
           </span>
         </h1>
 
-        <!-- Subtítulo -->
         <p class="text-2xl md:text-3xl text-white/80 max-w-3xl mx-auto mb-10 tracking-tight">
           Agência de performance digital que combina tecnologia, estratégia e resultados reais.
         </p>
 
-        <!-- Botões -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="#contato" class="bg-white text-black px-10 py-4 rounded-2xl font-semibold hover:bg-zinc-100 transition text-lg">
             Vamos trabalhar juntos
@@ -157,9 +147,6 @@
         <div>+10 anos de experiência</div>
       </div>
     </div>
-
-    <!-- Linha decorativa -->
-    <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
   </section>
 
   <!-- SOBRE -->
@@ -353,6 +340,7 @@
       easing: 'ease-out-cubic'
     });
 
+    // Menu Mobile
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -375,6 +363,95 @@
     });
 
     mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    // Efeito de Partículas Sutil
+    function initParticles() {
+      const canvas = document.getElementById('particles-canvas');
+      if (!canvas) return;
+
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      const particleCount = 45;
+
+      function resizeCanvas() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+      }
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 2 + 0.8;
+          this.speedX = (Math.random() - 0.5) * 0.3;
+          this.speedY = (Math.random() - 0.5) * 0.3;
+          this.opacity = Math.random() * 0.4 + 0.2;
+        }
+
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+          if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        }
+
+        draw() {
+          ctx.fillStyle = `rgba(192, 38, 211, ${this.opacity})`;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      function createParticles() {
+        particles = [];
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+      }
+
+      function connectParticles() {
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 120) {
+              ctx.strokeStyle = `rgba(103, 232, 249, ${0.08 * (1 - distance / 120)})`;
+              ctx.lineWidth = 0.6;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].draw();
+        }
+        connectParticles();
+        requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('resize', () => {
+        resizeCanvas();
+        createParticles();
+      });
+
+      resizeCanvas();
+      createParticles();
+      animate();
+    }
+
+    window.onload = function() {
+      initParticles();
+    };
   </script>
 
 </body>
