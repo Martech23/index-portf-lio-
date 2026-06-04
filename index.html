@@ -105,49 +105,53 @@
     </div>
   </nav>
 
-  <!-- HERO COM PARTÍCULAS -->
-  <section class="hero-bg min-h-[95vh] flex items-center pt-16 pb-10 relative overflow-hidden" data-aos="fade-up">
+<!-- HERO COM GLASSMORPHISM EM TODA A ÁREA -->
+<section class="min-h-[95vh] flex items-center pt-16 pb-10 relative overflow-hidden" data-aos="fade-up">
+  
+  <!-- Fundo com efeito Glass -->
+  <div class="absolute inset-0 bg-zinc-950/80 backdrop-blur-3xl z-0"></div>
+  
+  <!-- Partículas sutis -->
+  <canvas id="particles-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+
+  <!-- Conteúdo -->
+  <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
     
-    <!-- Canvas de Partículas -->
-    <canvas id="particles-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
-
-    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+    <!-- Glass Card Central (mais clean) -->
+    <div class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-10 md:p-16 shadow-2xl">
       
-      <!-- Glass Card Avançado -->
-      <div class="advanced-glass rounded-3xl p-10 md:p-16 shadow-2xl">
-        
-        <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full text-sm mb-8 backdrop-blur-xl">
-          <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-          <span class="text-white/90">Disponível para novos projetos • 2026</span>
-        </div>
-
-        <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6">
-          Martins Web<br>
-          <span class="animated-gradient">
-            Gestor de Tráfego Pago
-          </span>
-        </h1>
-
-        <p class="text-2xl md:text-3xl text-white/80 max-w-3xl mx-auto mb-10 tracking-tight">
-          Agência de performance digital que combina tecnologia, estratégia e resultados reais.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#contato" class="bg-white text-black px-10 py-4 rounded-2xl font-semibold hover:bg-zinc-100 transition text-lg">
-            Vamos trabalhar juntos
-          </a>
-          <a href="sobre.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-xl px-10 py-4 rounded-2xl font-semibold transition text-lg">
-            Conheça nossa metodologia
-          </a>
-        </div>
+      <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full text-sm mb-8">
+        <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+        <span class="text-white/90">Disponível para novos projetos • 2026</span>
       </div>
 
-      <div class="flex justify-center gap-8 mt-8 text-sm text-white/60">
-        <div>Recife, PE</div>
-        <div>+10 anos de experiência</div>
+      <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-6">
+        Martins Web<br>
+        <span class="animated-gradient">
+          Gestor de Tráfego Pago
+        </span>
+      </h1>
+
+      <p class="text-2xl md:text-3xl text-white/80 max-w-3xl mx-auto mb-10 tracking-tight">
+        Agência de performance digital que combina tecnologia, estratégia e resultados reais.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contato" class="bg-white text-black px-10 py-4 rounded-2xl font-semibold hover:bg-zinc-100 transition text-lg">
+          Vamos trabalhar juntos
+        </a>
+        <a href="sobre.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-xl px-10 py-4 rounded-2xl font-semibold transition text-lg">
+          Conheça nossa metodologia
+        </a>
       </div>
     </div>
-  </section>
+
+    <div class="flex justify-center gap-8 mt-8 text-sm text-white/60">
+      <div>Recife, PE</div>
+      <div>+10 anos de experiência</div>
+    </div>
+  </div>
+</section>
 
   <!-- SOBRE -->
   <section class="py-20 bg-zinc-900" data-aos="fade-up">
