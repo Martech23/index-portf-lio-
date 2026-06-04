@@ -10,7 +10,6 @@
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
 
-    /* Glassmorphism Avançado */
     .advanced-glass {
       background: rgba(255, 255, 255, 0.055);
       backdrop-filter: blur(24px);
@@ -29,7 +28,36 @@
       pointer-events: none;
     }
 
-    /* Gradiente Animado */
+    /* Efeito Holográfico */
+    .holographic {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .holographic::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        135deg,
+        transparent 20%,
+        rgba(255,255,255,0.25) 40%,
+        rgba(103,232,249,0.3) 50%,
+        rgba(192,38,211,0.25) 60%,
+        transparent 80%
+      );
+      animation: hologram-shine 3.5s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes hologram-shine {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(25deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(25deg); }
+    }
+
     .animated-gradient {
       background: linear-gradient(270deg, #c026d3, #7c3aed, #67e8f9, #c026d3);
       background-size: 400% 400%;
@@ -44,32 +72,12 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Micro-interações nos cards */
     .modern-card {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .modern-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    }
-    .modern-card:hover i {
-      transform: scale(1.1);
-    }
-
-    /* Grain Texture */
-    .grain {
-      background-image: 
-        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
-      background-size: 4px 4px;
-    }
-
-    /* Mesh Gradient no Hero */
-    .mesh-bg {
-      background: 
-        radial-gradient(circle at 20% 30%, rgba(192, 38, 211, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(103, 232, 249, 0.1) 0%, transparent 50%),
-        linear-gradient(135deg, #0a0a0a 0%, #1a0033 100%);
     }
   </style>
 </head>
@@ -118,14 +126,15 @@
     </div>
   </nav>
 
-  <!-- HERO COM MESH GRADIENT + GLASS -->
+  <!-- HERO COM EFEITO HOLOGRÁFICO -->
   <section class="min-h-[95vh] flex items-center pt-16 pb-10 relative overflow-hidden mesh-bg grain" data-aos="fade-up">
     
     <canvas id="particles-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
 
     <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
       
-      <div class="advanced-glass rounded-3xl p-10 md:p-16 shadow-2xl">
+      <!-- Card com Efeito Holográfico -->
+      <div class="advanced-glass holographic rounded-3xl p-10 md:p-16 shadow-2xl">
         
         <div class="inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full text-sm mb-8">
           <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
@@ -170,7 +179,7 @@
     </div>
   </section>
 
-  <!-- POR QUE INVESTIR (FLOATING CARDS) -->
+  <!-- POR QUE INVESTIR -->
   <section id="por-que-investir" class="py-20" data-aos="fade-up">
     <div class="max-w-7xl mx-auto px-6">
       <h2 class="text-5xl font-bold text-center mb-16">Por que pequenas e médias empresas devem investir em Marketing?</h2>
@@ -194,7 +203,7 @@
     </div>
   </section>
 
-  <!-- COMPETÊNCIAS (FLOATING) -->
+  <!-- COMPETÊNCIAS -->
   <section id="competencias" class="py-20 bg-zinc-900" data-aos="fade-up">
     <div class="max-w-7xl mx-auto px-6">
       <h2 class="text-5xl font-bold text-center mb-16">Competências</h2>
@@ -218,68 +227,56 @@
     </div>
   </section>
 
-  <!-- FERRAMENTAS - BENTO GRID -->
+  <!-- FERRAMENTAS (VOLTANDO AO LAYOUT ANTIGO) -->
   <section id="ferramentas" class="py-20" data-aos="fade-up">
     <div class="max-w-7xl mx-auto px-6">
       <h2 class="text-5xl font-bold text-center mb-16">Ferramentas & Plataformas</h2>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[minmax(140px,auto)]">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- Google Ads - Maior -->
-        <div class="modern-card bg-zinc-950 p-8 rounded-3xl lg:col-span-2 lg:row-span-1 flex flex-col justify-between">
-          <div>
-            <i class="fa-brands fa-google text-3xl text-blue-400 mb-4"></i>
-            <h3 class="text-2xl font-semibold mb-2">Google Ads</h3>
-            <p class="text-zinc-400 text-sm">Campanhas estratégicas na pesquisa e YouTube para atrair clientes com alta intenção de compra.</p>
-          </div>
+        <div class="modern-card bg-zinc-950 p-8 rounded-3xl">
+          <div class="flex items-center gap-4 mb-4"><i class="fa-brands fa-google text-3xl text-blue-400"></i><span class="font-semibold text-lg">Google Ads</span></div>
+          <p class="text-zinc-400 text-sm">Criação e gestão de campanhas estratégicas na rede de pesquisa e YouTube, conectando sua marca a clientes com alta intenção de compra.</p>
         </div>
 
         <div class="modern-card bg-zinc-950 p-8 rounded-3xl">
-          <i class="fa-brands fa-meta text-3xl text-blue-600 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Meta Ads</h3>
-          <p class="text-zinc-400 text-sm">Segmentação avançada no Instagram e Facebook com foco em conversão.</p>
+          <div class="flex items-center gap-4 mb-4"><i class="fa-brands fa-meta text-3xl text-blue-600"></i><span class="font-semibold text-lg">Meta Ads</span></div>
+          <p class="text-zinc-400 text-sm">Campanhas segmentadas no Instagram e Facebook com foco em geração de leads, engajamento e conversões de alta qualidade.</p>
         </div>
 
         <div class="modern-card bg-zinc-950 p-8 rounded-3xl">
-          <i class="fa-solid fa-store text-3xl text-red-400 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Google Meu Negócio</h3>
-          <p class="text-zinc-400 text-sm">Posicionamento local estratégico no Google Maps.</p>
-        </div>
-
-        <div class="modern-card bg-zinc-950 p-8 rounded-3xl lg:col-span-1">
-          <i class="fa-solid fa-chart-bar text-3xl text-emerald-400 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Google Analytics</h3>
-          <p class="text-zinc-400 text-sm">Análise profunda de dados para otimizar ROI.</p>
+          <div class="flex items-center gap-4 mb-4"><i class="fa-solid fa-store text-3xl text-red-400"></i><span class="font-semibold text-lg">Google Meu Negócio</span></div>
+          <p class="text-zinc-400 text-sm">Otimização e gestão do perfil da sua empresa no Google para aumentar a visibilidade local e atrair clientes da sua região.</p>
         </div>
 
         <div class="modern-card bg-zinc-950 p-8 rounded-3xl">
-          <i class="fa-solid fa-ad text-3xl text-orange-400 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Google AdSense</h3>
-          <p class="text-zinc-400 text-sm">Gestão estratégica de monetização em portais.</p>
-        </div>
-
-        <div class="modern-card bg-zinc-950 p-8 rounded-3xl ring-1 ring-violet-500/30 lg:col-span-2">
-          <i class="fa-solid fa-cart-shopping text-3xl text-fuchsia-400 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">E-commerce & Landing Pages</h3>
-          <p class="text-zinc-400 text-sm">Lojas virtuais e páginas de alta conversão projetadas para vender.</p>
+          <div class="flex items-center gap-4 mb-4"><i class="fa-solid fa-chart-bar text-3xl text-emerald-400"></i><span class="font-semibold text-lg">Google Analytics</span></div>
+          <p class="text-zinc-400 text-sm">Análise avançada de dados e comportamento do usuário para identificar oportunidades e otimizar o desempenho das campanhas.</p>
         </div>
 
         <div class="modern-card bg-zinc-950 p-8 rounded-3xl">
-          <i class="fa-solid fa-globe text-3xl text-violet-400 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Criação de Sites</h3>
-          <p class="text-zinc-400 text-sm">Sites modernos, rápidos e otimizados para SEO.</p>
+          <div class="flex items-center gap-4 mb-4"><i class="fa-solid fa-ad text-3xl text-orange-400"></i><span class="font-semibold text-lg">Google AdSense</span></div>
+          <p class="text-zinc-400 text-sm">Gestão estratégica de espaços publicitários em portais de conteúdo para maximizar receita e escalar resultados.</p>
+        </div>
+
+        <div class="modern-card bg-zinc-950 p-8 rounded-3xl ring-1 ring-violet-500/30">
+          <div class="flex items-center gap-4 mb-4"><i class="fa-solid fa-cart-shopping text-3xl text-fuchsia-400"></i><span class="font-semibold text-lg">E-commerce & Landing Pages</span></div>
+          <p class="text-zinc-400 text-sm">Criação de lojas virtuais completas e páginas de alta conversão projetadas para transformar visitantes em clientes pagantes.</p>
         </div>
 
         <div class="modern-card bg-zinc-950 p-8 rounded-3xl">
-          <i class="fa-brands fa-whatsapp text-3xl text-emerald-500 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Automação WhatsApp</h3>
-          <p class="text-zinc-400 text-sm">Funis automatizados 24h para qualificação e suporte.</p>
+          <div class="flex items-center gap-4 mb-4"><i class="fa-solid fa-globe text-3xl text-violet-400"></i><span class="font-semibold text-lg">Criação de Sites</span></div>
+          <p class="text-zinc-400 text-sm">Desenvolvimento de sites institucionais modernos, rápidos, responsivos e otimizados para mecanismos de busca (SEO).</p>
         </div>
 
-        <div class="modern-card bg-zinc-950 p-8 rounded-3xl lg:col-span-1">
-          <i class="fa-solid fa-pen-to-square text-3xl text-fuchsia-400 mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Copywriting & Conteúdo</h3>
-          <p class="text-zinc-400 text-sm">Textos persuasivos que geram conexão e conversão.</p>
+        <div class="modern-card bg-zinc-950 p-8 rounded-3xl">
+          <div class="flex items-center gap-4 mb-4"><i class="fa-brands fa-whatsapp text-3xl text-emerald-500"></i><span class="font-semibold text-lg">Automação WhatsApp</span></div>
+          <p class="text-zinc-400 text-sm">Implementação de funis automatizados de atendimento para qualificar leads, agilizar vendas e oferecer suporte 24 horas por dia.</p>
+        </div>
+
+        <div class="modern-card bg-zinc-950 p-8 rounded-3xl">
+          <div class="flex items-center gap-4 mb-4"><i class="fa-solid fa-pen-to-square text-3xl text-fuchsia-400"></i><span class="font-semibold text-lg">Copywriting & Conteúdo</span></div>
+          <p class="text-zinc-400 text-sm">Produção de textos persuasivos e estratégicos para anúncios, sites e materiais que geram conexão e aumentam as taxas de conversão.</p>
         </div>
 
       </div>
@@ -311,7 +308,7 @@
         <div class="modern-card bg-zinc-950 p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
           <div class="flex items-center gap-3 mb-4"><i class="fa-solid fa-car text-2xl text-blue-400"></i><h3 class="text-2xl font-bold">Localiza</h3></div>
           <div class="text-xs font-semibold uppercase tracking-wider text-violet-400 mb-3">Nacional</div>
-          <p class="text-zinc-400 text-sm">Domínio da pesquisa do Google e geolocalização cirúrgica para capturar clientes com alta intenção.</p>
+          <p class="text-zinc-400 text-sm">Domínio da pesquisa do Google e geolocalização cirúrgica para capturar clientes com alta intenção de compra.</p>
         </div>
 
         <div class="modern-card bg-zinc-950 p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="250">
