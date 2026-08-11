@@ -1,7 +1,360 @@
-<div style="position: relative; width: 100%; height: 0; padding-top: 449.7804%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="https://www.canva.com/design/DAHR_0tq5cA/OJQaN0kn6E_rtMsiElrU5w/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-  </iframe>
-</div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Martins - Portfólio de Design Gráfico</title>
+    
+    <!-- Importando fontes para manter o design elegante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Variáveis de Cores e Fontes */
+        :root {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --text-muted: #a0a0a0;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --accent-color: #e0e0e0;
+        }
+
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Layout das Seções */
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 70vh;
+            gap: 4rem;
+            padding: 4rem 0;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Tipografia */
+        h1, h2 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.1;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-weight: 300;
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+        }
+
+        /* Elementos Específicos */
+        .badge {
+            display: inline-block;
+            border: 1px solid var(--text-color);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+        .cta-link {
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .cta-link:hover {
+            opacity: 0.8;
+        }
+
+        .line {
+            width: 80px;
+            height: 1px;
+            background-color: var(--accent-color);
+            margin-top: 1.5rem;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #1a1a1a;
+            width: 100%;
+        }
+
+        /* Imagens Principais (Hero e Sobre) */
+        .profile-img, .art-img {
+            width: 100%;
+            max-width: 350px;
+            object-fit: cover;
+            border-radius: 50%; /* Borda arredondada base */
+        }
+
+        .profile-img {
+            aspect-ratio: 3/4; /* Formato oval/tall para o Hero */
+        }
+
+        .art-img {
+            aspect-ratio: 1/1; /* Formato circular para o Sobre Mim */
+        }
+
+        /* Seção de Formação */
+        .formation {
+            flex-direction: column;
+            align-items: flex-start;
+            min-height: auto;
+            padding-bottom: 4rem;
+        }
+
+        .formation h3 {
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .formation ul {
+            list-style-type: disc;
+            list-style-position: inside;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-left: 1.5rem;
+        }
+
+        .formation li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* Seção de Portfólio (Nova para as outras 7 fotos) */
+        .portfolio-section {
+            display: block; /* Padrão block, não flex */
+            padding: 4rem 0 6rem 0;
+            min-height: auto;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            background-color: #0d0d0d;
+            border: 1px solid #1a1a1a;
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-img-small {
+            width: 100%;
+            height: 200px;
+            object-fit: contain; /* Mantém proporção sem cortar */
+            background-color: transparent; /* Transparência para logos */
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-title {
+            color: var(--accent-color);
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-top: auto; /* Empurra para o fundo se houver texto */
+            text-align: center;
+        }
+
+        /* Responsividade para Celulares (Mobile) */
+        @media (max-width: 768px) {
+            section {
+                flex-direction: column;
+                text-align: center;
+                padding: 3rem 0;
+                gap: 2.5rem;
+            }
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            p {
+                text-align: justify;
+                max-width: 90%;
+            }
+
+            .formation {
+                align-items: center;
+            }
+            
+            .skills-content {
+                text-align: left;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr; /* Coluna única no mobile */
+                gap: 2rem;
+            }
+            
+            .portfolio-img-small {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <!-- Seção 1: Hero / Boas-vindas -->
+        <section class="hero">
+            <div class="content">
+                <h1>Bem-vindo ao<br>meu portfólio</h1>
+                <div class="badge">David Martins / Web Design</div>
+                <a href="#contato" class="cta-link">&#x21B3; Trabalhe comigo!</a>
+            </div>
+            <div class="image-container">
+                <!-- Foto Principal (Hero Portrait: image_1.png) -->
+                <img src="image_1.png" alt="Foto de David Martins" class="profile-img">
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Seção 2: Sobre Mim -->
+        <section class="about">
+            <div class="content">
+                <h2>Quem é o David?</h2>
+                <p>Profissional multidisciplinar com mais de 10 anos de experiência unindo o Desenvolvimento Web à Criação de Conteúdo Estratégico e Marketing Digital. Especialista em entregar soluções digitais de ponta a ponta, desde a configuração de servidores e codificação estrutural até a elaboração de campanhas de copywriting e gestão de parcerias comerciais. Focado em garantir não apenas que os ambientes digitais funcionem com excelência técnica, mas que também tenham design alinhado à marca, convertam acessos em resultados e engajem o público-alvo de forma efetiva.</p>
+                <div class="line"></div>
+            </div>
+            <div class="image-container">
+                <!-- Foto de Arte (About Collage: image_2.png) -->
+                <img src="image_2.png" alt="Colagem Artística" class="art-img">
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Seção 3: Formação -->
+        <section class="formation">
+            <h2>Minha Formação</h2>
+            <div class="skills-content">
+                <h3>&#x21B3; Formação</h3>
+                <ul>
+                    <li>Web Design</li>
+                    <li>Redator</li>
+                    <li>Criador de Conteúdo</li>
+                    <li>Marketing Digital</li>
+                </ul>
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- Seção 4: Portfólio (Showcase das outras imagens enviadas) -->
+        <section class="portfolio-section">
+            <h2>Meus Projetos / Portfólio</h2>
+            
+            <div class="portfolio-grid">
+                <!-- Item 1: Código -->
+                <div class="portfolio-item">
+                    <img src="image_3.png" alt="Tela de Código" class="portfolio-img-small">
+                    <h4 class="portfolio-title">Desenvolvimento Web</h4>
+                </div>
+                <!-- Item 2: Mãos no Laptop -->
+                <div class="portfolio-item">
+                    <img src="image_4.png" alt="Mãos no Teclado" class="portfolio-img-small">
+                    <h4 class="portfolio-title">Redação & Copywriting</h4>
+                </div>
+                <!-- Item 3: Plataforma de Anúncios -->
+                <div class="portfolio-item">
+                    <img src="image_5.png" alt="Plataforma de Ads" class="portfolio-img-small">
+                    <h4 class="portfolio-title">Marketing Digital</h4>
+                </div>
+                <!-- Item 4: Castelo da Disney -->
+                <div class="portfolio-item">
+                    <img src="image_6.png" alt="Castelo da Disney" class="portfolio-img-small">
+                    <h4 class="portfolio-title">Marketing de Experiência</h4>
+                </div>
+                <!-- Item 5: Ícone do YouTube -->
+                <div class="portfolio-item">
+                    <img src="image_7.png" alt="Ícone do YouTube" class="portfolio-img-small">
+                    <h4 class="portfolio-title">Criação de Conteúdo</h4>
+                </div>
+                <!-- Item 6: Logo Bet365 -->
+                <div class="portfolio-item">
+                    <img src="image_8.png" alt="Logo Bet365" class="portfolio-img-small">
+                    <h4 class="portfolio-title">Parcerias e SEO</h4>
+                </div>
+                <!-- Item 7: Logo Ricardo Antunes -->
+                <div class="portfolio-item">
+                    <img src="image_9.png" alt="Logo Ricardo Antunes" class="portfolio-img-small">
+                    <h4 class="portfolio-title">Gestão de Marca</h4>
+                </div>
+            </div>
+            
+            <!-- Título final repetido no final da seção para efeito visual de rodapé -->
+            <p style="margin-top: 4rem; text-align: center; color: var(--text-color); font-family: var(--font-heading); font-size: 2.5rem; border-top: 1px solid #1a1a1a; padding-top: 2rem;">Minha Formação</p>
+        </section>
+
+    </main>
+
+</body>
+</html>
