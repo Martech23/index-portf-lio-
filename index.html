@@ -16,24 +16,24 @@
             font-family: sans-serif;
         }
 
-        /* Container que segura o design: responsivo para Desktop e Mobile */
+        /* Container que segura o design */
         .portfolio-container {
             width: 100%;
-            max-width: 800px; /* Limita a largura no desktop */
-            padding: 20px; /* Dá um respiro nas laterais no celular */
+            max-width: 800px; 
+            padding: 20px; 
             box-sizing: border-box;
-            text-align: center; /* Centraliza o botão do WhatsApp */
+            text-align: center; 
         }
 
-        /* O código que mantém a proporção exata do seu novo Canva original */
+        /* O código que mantém a proporção exata */
         .canva-wrapper {
             position: relative;
             width: 100%;
             height: 0;
-            padding-top: 449.7804%; /* Proporção exata do seu design */
+            padding-top: 449.7804%; 
             box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
             border-radius: 8px;
-            overflow: hidden;
+            overflow: hidden; /* Corta qualquer excesso que cause rolagem no container */
             background-color: #1a1a1a;
         }
 
@@ -44,9 +44,10 @@
             width: 100%;
             height: 100%;
             border: none;
+            overflow: hidden; /* Força a ocultação da barra no CSS */
         }
 
-        /* Oculta os links originais do rodapé enviados no código antigo */
+        /* Oculta os links originais do rodapé do Canva */
         .canva-footer-link {
             display: none;
         }
@@ -54,7 +55,7 @@
         /* Estilo do Botão do WhatsApp */
         .whatsapp-btn {
             display: inline-block;
-            background-color: #25D366; /* Verde oficial do WhatsApp */
+            background-color: #25D366; 
             color: #ffffff;
             text-decoration: none;
             padding: 16px 32px;
@@ -68,24 +69,25 @@
         }
 
         .whatsapp-btn:hover {
-            background-color: #1ebe57; /* Verde mais escuro ao passar o mouse */
-            transform: scale(1.05); /* Leve efeito de aumento */
+            background-color: #1ebe57; 
+            transform: scale(1.05); 
         }
     </style>
 </head>
 <body>
 
     <div class="portfolio-container">
-        <!-- Seu NOVO iframe original do Canva -->
+        <!-- Iframe do Canva com scrolling="no" adicionado -->
         <div class="canva-wrapper">
             <iframe loading="lazy" 
                 src="https://www.canva.com/design/DAHR_0tq5cA/Y3fPUvDzExvrX9MxJCGVmQ/view?embed" 
                 allowfullscreen="allowfullscreen" 
-                allow="fullscreen">
+                allow="fullscreen"
+                scrolling="no">
             </iframe>
         </div>
         
-        <!-- Botão do WhatsApp corrigido -->
+        <!-- Botão do WhatsApp -->
         <a href="https://wa.me/5511975321113?text=Olá%20vim%20pelo%20seu%20Portfólio%20e%20gostaria%20de%20um%20orçamento." 
            class="whatsapp-btn" 
            target="_blank" 
