@@ -5,33 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David Martins - Portfólio</title>
     <style>
-        /* Reseta margens da página e define fundo escuro (opcional) */
+        /* Reseta margens da página e define fundo escuro */
         body {
             margin: 0;
             padding: 0;
-            background-color: #000000; /* Pode mudar para a cor que preferir */
+            background-color: #000000;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            font-family: sans-serif;
         }
 
         /* Container que segura o design: responsivo para Desktop e Mobile */
         .portfolio-container {
             width: 100%;
-            max-width: 800px; /* Limita a largura máxima no desktop para não ficar gigante */
+            max-width: 800px; /* Limita a largura no desktop */
             padding: 20px; /* Dá um respiro nas laterais no celular */
             box-sizing: border-box;
+            text-align: center; /* Centraliza o botão do WhatsApp */
         }
 
-        /* O código que mantém a proporção exata do seu Canva original */
+        /* O código que mantém a proporção exata do seu novo Canva original */
         .canva-wrapper {
             position: relative;
             width: 100%;
             height: 0;
             padding-top: 449.7804%; /* Proporção exata do seu design */
-            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Sombra suave */
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             overflow: hidden;
-            background-color: #1a1a1a; /* Fundo enquanto carrega */
+            background-color: #1a1a1a;
         }
 
         .canva-wrapper iframe {
@@ -47,22 +50,51 @@
         .canva-footer-link {
             display: none;
         }
+
+        /* Estilo do Botão do WhatsApp */
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25D366; /* Verde oficial do WhatsApp */
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 32px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebe57; /* Verde mais escuro ao passar o mouse */
+            transform: scale(1.05); /* Leve efeito de aumento */
+        }
     </style>
 </head>
 <body>
 
     <div class="portfolio-container">
-        <!-- Seu iframe original do Canva -->
+        <!-- Seu NOVO iframe original do Canva -->
         <div class="canva-wrapper">
             <iframe loading="lazy" 
-                src="https://www.canva.com/design/DAHR_0tq5cA/OJQaN0kn6E_rtMsiElrU5w/view?embed" 
+                src="https://www.canva.com/design/DAHR_0tq5cA/Y3fPUvDzExvrX9MxJCGVmQ/view?embed" 
                 allowfullscreen="allowfullscreen" 
                 allow="fullscreen">
             </iframe>
         </div>
         
-        <!-- Mantive a referência do link, mas ele está oculto pelo CSS acima para deixar o site mais limpo -->
-        <a class="canva-footer-link" href="https://www.canva.com/design/DAHR_0tq5cA/OJQaN0kn6E_rtMsiElrU5w/view?utm_content=DAHR_0tq5cA&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener">Site de Portfólio Design Gráfico</a>
+        <!-- Botão do WhatsApp -->
+        <a href="https://wa.me/5511975321113?text=Olá%20vim%20pelo%20seu%20Portfólio%20e%20gostaria%20de%20orçamento." 
+           class="whatsapp-btn" 
+           target="_blank" 
+           rel="noopener">
+           Fale comigo pelo WhatsApp
+        </a>
+
+        <!-- Link original oculto pelo CSS -->
+        <a class="canva-footer-link" href="https://www.canva.com/design/DAHR_0tq5cA/Y3fPUvDzExvrX9MxJCGVmQ/view?utm_content=DAHR_0tq5cA&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener">Site de Portfólio Design Gráfico</a>
     </div>
 
 </body>
